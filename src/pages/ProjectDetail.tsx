@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react"
 import { LuArrowLeft, LuCalendar, LuUser, LuRuler, LuTag } from "react-icons/lu"
 import type { Project } from "../data/projects"
-import { BlockFooter } from "../components/NewUIComponents"
 
 interface ProjectDetailProps {
   project: Project
@@ -243,7 +242,6 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
           </SimpleGrid>
         </>
       )}
-      <BlockFooter />
     </Box>
   )
 }

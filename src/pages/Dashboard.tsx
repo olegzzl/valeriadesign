@@ -65,7 +65,7 @@ export function Dashboard({ onProjectClick, onHamburgerClick, onNavigate }: Dash
                 Valeria Design Studio
               </Heading>
               <Text fontSize={{ base: "xs", md: "xl" }} fontWeight="medium" color="gray.600" mt="0.5">
-                Проєкти та Портфоліо
+                Дизайнер меблів
               </Text>
             </Box>
           </HStack>
