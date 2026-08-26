@@ -38,7 +38,7 @@ export function Header({ onHamburgerClick }: { onHamburgerClick: () => void }) {
         <LuMenu />
       </IconButton>
       <Text fontSize="lg" fontWeight="bold" flex="1" textAlign="center">
-        Валерия дизайн студио
+        Oleg Web Design
       </Text>
       <Box display={{ base: "none", lg: "flex" }} gap="2">
         <Button variant="outline" size="sm">
@@ -57,7 +57,7 @@ export function Footer({ textColor = "gray.600" }: { textColor?: string }) {
   return (
     <Box as="footer" bg="transparent" py="4" textAlign="center" mt="8">
       <Text fontSize="sm" color={textColor} transition="color 0.4s ease">
-        © 2026 Валерия Дизайн Студіо. Усі права захищені.
+        © 2026 Oleg Web Design. Усі права захищені.
       </Text>
     </Box>
   )
@@ -130,7 +130,7 @@ export function BlockFooter() {
         {/* Left Side: Copyright and Credit */}
         <Box textAlign={{ base: "center", md: "left" }}>
           <Text fontSize="xs" color="gray.400" fontWeight="medium">
-            © 2026 Valeria Design Studio. Усі права захищені.
+            © 2026 Oleg Web Design. Усі права захищені.
           </Text>
           <Text fontSize="xs" color="gray.400" mt="1" fontWeight="medium">
             design by{" "}

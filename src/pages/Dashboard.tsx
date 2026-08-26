@@ -3,7 +3,6 @@ import {
   Flex,
   Heading,
   Text,
-  Button,
   HStack,
   SimpleGrid,
   IconButton,
@@ -17,7 +16,7 @@ import { BlockFooter } from "../components/NewUIComponents"
 interface DashboardProps {
   onProjectClick: (project: Project) => void
   onHamburgerClick?: () => void
-  onNavigate?: (page: any) => void
+  onNavigate?: (page: string) => void
 }
 
 export function Dashboard({ onProjectClick, onHamburgerClick, onNavigate }: DashboardProps) {
@@ -62,10 +61,10 @@ export function Dashboard({ onProjectClick, onHamburgerClick, onNavigate }: Dash
                 color="gray.800"
                 lineHeight="shorter"
               >
-                Valeria Design Studio
+                Oleg Web Studio
               </Heading>
               <Text fontSize={{ base: "xs", md: "xl" }} fontWeight="medium" color="gray.600" mt="0.5">
-                Дизайнер меблів
+                Сайты и интерфейсы
               </Text>
             </Box>
           </HStack>
