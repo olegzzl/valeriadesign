@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import { Box, Flex } from "@chakra-ui/react"
+import { Analytics } from "@vercel/analytics/react"
 import { Sidebar } from "./components/Sidebar"
 import { Dashboard } from "./pages/Dashboard"
 import { ProjectDetail } from "./pages/ProjectDetail"
@@ -282,6 +283,7 @@ export default function App() {
           </Box>
         </Box>
       </Flex>
+      <Analytics />
     </Box>
   )
 }
