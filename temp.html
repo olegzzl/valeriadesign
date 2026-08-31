@@ -1,0 +1,554 @@
+﻿?<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiteMarket - Каталог готовых сайтов</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737688",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#4b4e50",
+                        "background": "#faf8ff",
+                        "on-error-container": "#93000a",
+                        "surface": "#faf8ff",
+                        "on-surface-variant": "#434656",
+                        "surface-dim": "#d2d9f4",
+                        "primary-container": "#0052ff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface-container": "#eaedff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary-container": "#636668",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "outline-variant": "#c3c5d9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary": "#003ec7",
+                        "surface-container-high": "#e2e7ff",
+                        "on-primary-container": "#dfe3ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "secondary-container": "#d0e1fb",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "surface-tint": "#004ced",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#131b2e",
+                        "on-tertiary-container": "#e2e4e6",
+                        "surface-variant": "#dae2fd",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-bright": "#faf8ff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#001452",
+                        "on-secondary-container": "#54647a",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dde1ff",
+                        "inverse-surface": "#283044",
+                        "secondary-fixed": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-surface": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "md": "24px",
+                        "container-max": "1280px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "gutter": "24px",
+                        "sm": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf8ff; color: #131b2e; }
+        .device-shadow { box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05); }
+        .device-hover:hover { transform: translateY(-4px); box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+<span class="font-display-lg text-headline-md tracking-tight text-primary">SiteMarket</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Каталог сайтов</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200" href="#">Цены</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200" href="#">Обо мне</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:opacity-90 active:scale-95 transition-all">
+                Контакты
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 md:pt-32 pb-xl px-sm md:px-lg max-w-container-max mx-auto w-full">
+<!-- Hero Section -->
+<section class="text-center mb-16 md:mb-24">
+<h1 class="font-display-lg text-display-lg mb-4 text-on-surface max-w-3xl mx-auto leading-tight">Каталог готовых сайтов</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Готовые проекты для бизнеса, портфолио и интернет-магазинов. Быстрый запуск и современный дизайн.</p>
+</section>
+<!-- Featured View (Bento-style layout for visual impact) -->
+<section class="mb-24">
+</section>
+<!-- Catalog Grid -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface">Все проекты</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'http://olegzzl.pp.ua/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'http://olegzzl.pp.ua/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Coffee Shop</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">������</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'https://voguish-gold.vercel.app/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'https://voguish-gold.vercel.app/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Voguish Gold</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">����</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'https://voguish-gold.vercel.app/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa6n-6o-wXizlTGKVZG16kAS6yoN0327WzYx-2EMu-VKkD_q8Tz5gJChy3B0WKajwcpHHvDYQUd8F7ekWzoMMm8v1u-Xzz-rtEY2NLGy51bhf2AvAudYTHa7VYrxF9PjNLDMzUX-f-e1A5hPXsQmLRa1K6UIfuxGtyZl-kClMbxsbQiG-Q5x9LA_1L11qwxI8ylZngCkVpY8rbcOix4LEulDjzp6QhPUjGIDggiiRIIpo7O-jeKU0H" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'https://voguish-gold.vercel.app/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIaXlj-TZ3QMIl1rGuwKS9I2b5IVZvwNOvUNH3IA1rLiynf7k4TPPCYaKSpN3iPX39sezpSGQDkXsjv8DpUfmq8fET4k7ODyAx1ru_1gC023wZUTIKkHkD8PDTknLk9xJ9Kr35g6BlbF9VLzWYy6eD_NCi6tlGpQ5iX5O2mcraXq3fyPIIdoKJq2fcTS3SWZoDewTvk0-aTTWmqu5C8CHEov_Dl_hkmox6IQs-5j7ViDbQXThVqJVs" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Tech Store E-com</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">�������</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'https://voguish-gold.vercel.app/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrwvM5RnvMZivY1H-hy9AQtMVmdfk595jznAKP-ZN-do5BTdi1_o3WvgYUSe2hVbCHic3i98xo3qaWl0CPVdPS03KpexG-SHJWnjWNMauFvwvZJtCwbylRy7hgg11SLg7qJy2aecKT6rZD3NTTTeiCExAjCcPrsjTQk9HcwaigpUfOkMr4IAm4lfhT3B2TvbjYfy56de7rPM2ygTyub3IewKRnRBi5CfQHRC12ZFYzbgUZOk4i7_cr" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'https://voguish-gold.vercel.app/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP81uVcew4BwFusyoGcTB419FDxXvBymTeopTkFQNlq8Pjdq_jPhHJLIBgEN6yso7_VC39C1Xu9YwPxelwYxcglZQChp_9pLl-O1lPiR3NkMRivYa5jVLuE_VmJVv61pOaL6cDqrqbJYBcDfv0hQZZwtckTpV6HqCpv9MLWa-6TGXt0R20eaweTzzyuVcUyIeEiVwfePi8YLQyI8wtuBryNavfQVBvqnOJsLJph9pnsIRFwWis-qG4" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Creative Portfolio</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">���������</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'https://voguish-gold.vercel.app/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOsmkLv5u77seL4JidvGSSeVM6b7SVy2WnZqUUQmaEeCTx-IIcOw5jipv4tuYHsv6lJqkkL4p2Xxms-wNj3O7QkVAhPKbqOzCS7C2yU3HhelxyBF0cRoSRBF9LDwSKyaIqRn_BOBCcgiH7w3NvNqN1tuhnchYCUdQrZm56uREIDXLPXCCR5tCt8V19zX9qGYAko52WEOWzpd0m896NmNExYklznfAkdz_OX63z6A7_u8daPT04X1Pn" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'https://voguish-gold.vercel.app/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ifHqaUeTFUuwMCp5baQ-p0mOkrmEvP188VP8ZyCeJ8OcywQNVwqkE-6hFgQ4H7ovwHkwlGaZAXlffCoDTO8kw20-EQQ55PW--An2kKbJZZ2beqoRklZ8e8OBPC5xYJ9jXzzGaI4y9G90rgQ4DTL57dsTC8rLox27C7n0WuTiXkcZVOUfmfFwjob5fERwrllGEHX2qhH71h1Qp_eF1rxThP0QurlmE_iIpF9VbwXhuUj437PlXPut" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Saas Landing</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">������</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+<div class="bg-[#f5f8fb] rounded-3xl p-6 cursor-pointer group hover:shadow-xl hover:bg-white transition-all duration-300 border border-transparent hover:border-blue-100" onclick="openPreview('desktop', 'https://voguish-gold.vercel.app/')">
+    <div class="relative w-full pt-4 pb-6 flex items-end">
+        <div class="relative w-[85%] z-10 drop-shadow-md group-hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-full bg-[#1c1c1e] rounded-t-xl rounded-b-sm p-1.5 pb-2 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                <div class="absolute top-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#2c2c2e] rounded-full"></div>
+                <div class="w-full aspect-[16/10] bg-white overflow-hidden relative rounded-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4SZo0L2c1seCZOTdX8Rzsab-VHK2vXDLg3J-vwWVNFujEE0kiMo5iBdonHVVG9nujH1Vk5T4_vYJQuonAUxes2oHfan_UzXwpP-H8QceJxEXfbo7bBwPbhPXPBEpOIOSyWPsx2wlhEQ5cUVPcDd-hGSbhnuP0hf_maPFJTVMXGq7YjKn7weXroyhHVS-1tEMpSF695KmvJRrW3RxqUiYrlsO0-ijMo1C1bqrsTWTh2ChA9VoFId05" alt="Desktop View" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-full h-2.5 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-lg shadow-md relative flex justify-center -mt-0.5 z-20">
+                <div class="w-1/6 h-0.5 bg-[#b3b3b5] rounded-b-sm"></div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 right-2 w-[24%] aspect-[9/19.5] bg-[#1c1c1e] rounded-[1.25rem] p-1 shadow-2xl z-20 border border-[#333] group-hover:-translate-y-3 group-hover:scale-105 transition-all duration-300" onclick="event.stopPropagation(); openPreview('mobile', 'https://voguish-gold.vercel.app/')">
+            <div class="w-full h-full bg-white rounded-xl overflow-hidden relative">
+                <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-5 h-1.5 bg-black rounded-full z-10"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFCF4vwAx_tTKtzOSz0RNWJqIdI7UP0yGyLuZj4HhgeegTCXIsegJHwaPXP7r9c2Y_HWCTWSd6i_mIjXBRlt6eNWdUvQvd-KVWV4kb_aaBhODPRUNlWjxuwL_lrPaE4i1ZLbkeJtPLp3azXDH6c_4NmfSDgc7tRQSGuCyej0KVtCQpcW_hEj0xFpWVSE7P1bNDAozdFMSNawr2POk9qk-4yCvDuT0f6bD64wcT7XZW6IJk-Gvayub_" alt="Mobile View" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 px-1">
+        <h3 class="text-xl font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Gourmet Blog</h3>
+        <div class="flex justify-between items-center mt-2">
+            <span class="text-sm font-medium text-slate-400">���������</span>
+            <span class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">����������</span>
+        </div>
+    </div>
+</div>
+/div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low mt-xl border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-lg max-w-container-max mx-auto gap-md">
+<span class="font-headline-md text-headline-md text-primary">SiteMarket</span>
+<p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left">© 2024 SiteMarket Premium Digital Assets</p>
+<div class="flex gap-4 flex-wrap justify-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">License Info</a>
+</div>
+</div>
+</footer>
+<!-- Preview Modal -->
+<div id="previewModal" class="fixed inset-0 z-[100] hidden bg-white opacity-0 transition-opacity duration-300 overflow-y-auto no-scrollbar">
+    
+    <div class="min-h-screen flex flex-col items-center justify-center w-full py-16 px-4 relative">
+        
+        <!-- Mockup Container -->
+        <div id="mockupContainer" class="relative transition-all duration-500 ease-in-out w-full max-w-[800px] aspect-[16/10] mb-12 mx-auto">
+            
+            <!-- Close Button (Right next to the monitor) -->
+            <button onclick="closePreview()" class="absolute -top-10 right-0 md:-right-10 md:-top-6 p-2 rounded-full text-on-surface hover:bg-surface-variant transition-colors flex items-center justify-center z-30">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            
+            <!-- Desktop Mockup -->
+            <div id="desktopMockup" class="absolute inset-0 transition-opacity duration-500 opacity-100 drop-shadow-2xl z-10">
+                <!-- Screen Bezel -->
+                <div class="w-full h-full bg-[#1c1c1e] rounded-t-2xl rounded-b-lg p-3 md:p-5 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
+                    <!-- Camera Dot -->
+                    <div class="absolute top-1.5 md:top-2 left-1/2 -translate-x-1/2 w-1 h-1 md:w-1.5 md:h-1.5 bg-[#2c2c2e] rounded-full border border-[#111]"></div>
+                    <!-- Iframe Wrapper -->
+                    <div id="desktopIframeWrapper" class="w-full h-full bg-white overflow-hidden relative">
+                        <!-- Desktop scrollbar hack -->
+                        <div class="h-full" style="width: calc(100% + 20px);">
+                            <iframe id="desktopIframe" src="" class="w-full h-full border-0"></iframe>
+                        </div>
+                    </div>
+                    <!-- Brand -->
+                    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] md:text-[10px] text-[#555] font-semibold tracking-widest">MACBOOK</div>
+                </div>
+                <!-- Base -->
+                <div class="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-[115%] h-3 md:h-4 bg-gradient-to-b from-[#e5e5e7] to-[#b3b3b5] rounded-b-xl md:rounded-b-2xl shadow-lg relative flex justify-center">
+                    <div class="w-1/6 h-1 bg-[#b3b3b5] rounded-b-md"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Mockup -->
+            <div id="mobileMockup" class="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none drop-shadow-2xl z-20">
+                <!-- Phone Bezel -->
+                <div class="w-full h-full bg-[#1c1c1e] rounded-[2.5rem] p-3 md:p-3.5 relative shadow-[inset_0_0_0_2px_#3a3a3c,0_0_0_1px_#b3b3b5]">
+                    <!-- Dynamic Island / Notch -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
+                    <!-- Iframe Wrapper -->
+                    <div id="mobileIframeWrapper" class="w-full h-full bg-white overflow-hidden relative rounded-[2rem]">
+                        <div class="h-full" style="width: calc(100% + 32px); margin-left: -16px;">
+                            <iframe id="mobileIframe" src="" class="w-full h-full border-0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-col items-center gap-8 w-full max-w-2xl">
+            <!-- Buttons -->
+        <!-- Action Buttons -->
+        <div class="flex flex-row items-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full max-w-[800px] justify-center mx-auto relative z-30 px-4 sm:px-0">
+            <button id="toggleDeviceBtn" onclick="toggleDevice()" class="flex-1 sm:flex-none sm:w-auto px-2 sm:px-8 py-3 sm:py-4 bg-black text-white rounded-full font-medium text-[11px] sm:text-base hover:bg-[#222] transition-all flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Мобильная версия
+                <span class="material-symbols-outlined text-[18px] sm:text-[20px]">smartphone</span>
+            </button>
+            <button onclick="testSite()" class="flex-1 sm:flex-none sm:w-auto px-2 sm:px-8 py-3 sm:py-4 bg-black text-white rounded-full font-medium text-[11px] sm:text-base hover:bg-[#222] transition-all flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-none">
+                Перейти на сайт
+                <span class="material-symbols-outlined text-[18px] sm:text-[20px]">open_in_new</span>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    let currentUrl = '';
+    let currentDevice = 'desktop';
+    let currentIndex = 0;
+    const sites = [];
+    
+    // Elements
+    const modal = document.getElementById('previewModal');
+    const mockupContainer = document.getElementById('mockupContainer');
+    const desktopMockup = document.getElementById('desktopMockup');
+    const mobileMockup = document.getElementById('mobileMockup');
+    const desktopIframe = document.getElementById('desktopIframe');
+    const mobileIframe = document.getElementById('mobileIframe');
+    const desktopIframeWrapper = document.getElementById('desktopIframeWrapper');
+    const toggleDeviceBtn = document.getElementById('toggleDeviceBtn');
+
+    // Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+        // Extract all URLs from the catalog
+        const cards = Array.from(document.querySelectorAll('.group'));
+        cards.forEach(card => {
+            const laptop = card.querySelector('[onclick*="openPreview"]');
+            if (laptop) {
+                const match = laptop.getAttribute('onclick').match(/https?:\/\/[^']+/);
+                if (match) sites.push(match[0]);
+            }
+        });
+    });
+
+    const resizeObserver = new ResizeObserver(() => {
+        if (modal.classList.contains('hidden')) return;
+        
+        const wrapperWidth = desktopIframeWrapper.clientWidth;
+        const targetWidth = 1280; // Force desktop resolution
+        
+        if (wrapperWidth > 0 && wrapperWidth < targetWidth) {
+            const scale = wrapperWidth / targetWidth;
+            // Symmetric scrollbar hide: 32px extra width, 16px left shift
+            const extraWidth = 32 / scale;
+            const shiftLeft = -16 / scale;
+            
+            desktopIframe.style.width = (targetWidth + extraWidth) + 'px';
+            desktopIframe.style.marginLeft = shiftLeft + 'px';
+            
+            const wrapperHeight = desktopIframeWrapper.clientHeight;
+            desktopIframe.style.height = (wrapperHeight / scale) + 'px';
+            desktopIframe.style.transform = `scale(${scale})`;
+            desktopIframe.style.transformOrigin = 'top left';
+        } else {
+            desktopIframe.style.width = 'calc(100% + 32px)';
+            desktopIframe.style.marginLeft = '-16px';
+            desktopIframe.style.height = '100%';
+            desktopIframe.style.transform = 'none';
+        }
+    });
+    
+    resizeObserver.observe(desktopIframeWrapper);
+
+    function openPreview(device, url) {
+        // Find index
+        let idx = sites.indexOf(url);
+        if (idx !== -1) currentIndex = idx;
+        else currentIndex = 0;
+        
+        loadSite(url);
+        
+        modal.classList.remove('hidden');
+        // trigger reflow
+        void modal.offsetWidth;
+        modal.classList.remove('opacity-0');
+        
+        // Force the device they clicked
+        currentDevice = device === 'mobile' ? 'desktop' : 'mobile'; // set inverse to trigger toggle
+        toggleDevice();
+        
+        document.body.style.overflow = 'hidden';
+    }
+
+    function loadSite(url) {
+        currentUrl = url;
+        desktopIframe.src = url;
+        mobileIframe.src = url;
+    }
+
+    function closePreview() {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            desktopIframe.src = '';
+            mobileIframe.src = '';
+            currentUrl = '';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+
+    function toggleDevice() {
+        if (currentDevice === 'desktop') {
+            currentDevice = 'mobile';
+            mockupContainer.className = 'relative transition-all duration-500 ease-in-out w-[90vw] max-w-[320px] aspect-[9/19.5] mb-12 mx-auto';
+            desktopMockup.classList.replace('opacity-100', 'opacity-0');
+            desktopMockup.classList.add('pointer-events-none');
+            mobileMockup.classList.replace('opacity-0', 'opacity-100');
+            mobileMockup.classList.remove('pointer-events-none');
+            
+            toggleDeviceBtn.innerHTML = `
+                ПК версия
+                <span class="material-symbols-outlined text-[18px] sm:text-[20px]">computer</span>
+            `;
+        } else {
+            currentDevice = 'desktop';
+            mockupContainer.className = 'relative transition-all duration-500 ease-in-out w-full max-w-[800px] aspect-[16/10] mb-12 mx-auto';
+            mobileMockup.classList.replace('opacity-100', 'opacity-0');
+            mobileMockup.classList.add('pointer-events-none');
+            desktopMockup.classList.replace('opacity-0', 'opacity-100');
+            desktopMockup.classList.remove('pointer-events-none');
+            
+            toggleDeviceBtn.innerHTML = `
+                Мобильная версия
+                <span class="material-symbols-outlined text-[18px] sm:text-[20px]">smartphone</span>
+            `;
+            
+            // Trigger resize calculation
+            void desktopIframeWrapper.offsetWidth;
+        }
+    }
+    
+    function testSite() {
+        if (currentUrl) {
+            window.open(currentUrl, '_blank');
+        }
+    }
+</script>
+</body></html>
+
+
+
