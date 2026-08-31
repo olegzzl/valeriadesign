@@ -1,0 +1,10 @@
+{
+  "buildCommand": "echo \"No build step\"",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/code.html"
+    }
+  ]
+}
