@@ -1,18 +1,102 @@
 const fs = require('fs');
 
 const sites = [
-    { title: 'Voguish Gold', name: 'voguish-gold', link: 'https://voguish-gold.vercel.app/', category: 'Магазин' },
-    { title: 'Streetwear 01', name: 'streetwear01', link: 'https://streetwear01.netlify.app/', category: 'Магазин' },
-    { title: '303 Timer', name: '303timer', link: 'https://303timer.vercel.app/', category: 'Приложение' },
-    { title: 'Studio 19', name: 'studio-19-pl', link: 'https://studio-19-pl.vercel.app/#hero', category: 'Корпоративный' },
-    { title: 'Cosmetic Ivory', name: 'cosmetic-ivory', link: 'https://cosmetic-ivory.vercel.app/#home', category: 'Магазин' },
-    { title: 'LED Studio', name: 'ledstudio', link: 'https://www.ledstudio.duckdns.org/', category: 'Лендинг' },
-    { title: 'Streetwear 02', name: 'streetwear02', link: 'https://streetwear02.netlify.app/', category: 'Магазин' },
-    { title: 'Scherlock', name: 'scherlock', link: 'https://scherlock.netlify.app/', category: 'Блог' },
-    { title: 'Alex Diler', name: 'alexdiler', link: 'https://alexdiler.vercel.app/', category: 'Портфолио' },
-    { title: 'Supermaster', name: 'supermaster-2', link: 'https://supermaster-2.vercel.app/', category: 'Услуги' },
-    { title: 'Osite ETA', name: 'osite-eta', link: 'https://osite-eta.vercel.app/', category: 'Лендинг' },
-    { title: 'Psyhology', name: 'psyhology-8jft', link: 'https://psyhology-8jft.vercel.app/', category: 'Сайт-визитка' }
+    { 
+        title: 'NOCTA/08', 
+        name: 'voguish-gold', 
+        link: 'https://voguish-gold.vercel.app/', 
+        category: 'Магазин',
+        description: 'Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, quick-view и корзина. Вариант «для глобального рынка» — сдержанный, без лишнего шума.',
+        suitedFor: 'D2C-брендам одежды, фитнес- и бег-экипировке, вело- и скейт-комьюнити, молодым маркам аксесссуаров.'
+    },
+    { 
+        title: 'ASPHALT SAINTS', 
+        name: 'streetwear01', 
+        link: 'https://streetwear01.netlify.app/', 
+        category: 'Магазин',
+        description: 'Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача из трёх — для молодого амбициозного бренда.',
+        suitedFor: 'уличным брендам, мотоклубам, хип-хоп мерчу, барбершопам, брендам спортивной экипировки.'
+    },
+    { 
+        title: '303 Timer', 
+        name: '303timer', 
+        link: 'https://303timer.vercel.app/', 
+        category: 'Приложение',
+        description: 'Лендинг бесплатного Windows-приложения «303 Screen Break Timer» (помодоро, фокус, медитация, дыхательные практики). Первый экран с кнопками скачивания, блоки «как это работает», режимов дыхания и фотогалереи; 6 языков интерфейса, ссылки на GitHub и донаты. Готовая формула «продукт + скачать + поддержать автора».',
+        suitedFor: 'разработчикам приложений и плагинов, IT-стартапам, авторам утилит и цифровых продуктов — всем, кому нужен продающий сайт своего софта.'
+    },
+    { 
+        title: 'STUDIO 19', 
+        name: 'studio-19-pl', 
+        link: 'https://studio-19-pl.vercel.app/#hero', 
+        category: 'Корпоративный',
+        description: 'Сайт фотостудии с арендой залов: каталог залов с ценами за час, фильтры по интерьерам (лофт / минимализм / классика), блок профессионального оборудования, «кодекс студии», отзывы и онлайн-бронирование. Чёрно-белая премиальная подача в духе fashion-editorial.',
+        suitedFor: 'фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий — любому бизнесу с почасовой арендой площадей и бронированием.'
+    },
+    { 
+        title: 'Natalia Aesthetics', 
+        name: 'cosmetic-ivory', 
+        link: 'https://cosmetic-ivory.vercel.app/#home', 
+        category: 'Магазин',
+        description: 'Сайт косметолога: услуги с ценами, портфолио-кейсы с фото, блок «обо мне», календарь записи, форма связи, светлая эстетичная вёрстка плюс тёмная тема на выбор. Всё, что нужно beauty-мастеру, чтобы принимать клиентов онлайн.',
+        suitedFor: 'косметологам, мастерам маникюра, бровистам, визажистам, парикмахерам, массажистам, тату-мастерам, салонам красоты.'
+    },
+    { 
+        title: 'LUX LED Studio', 
+        name: 'ledstudio', 
+        link: 'https://www.ledstudio.duckdns.org/', 
+        category: 'Лендинг',
+        description: 'Интерактивное веб-приложение — симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент — наглядная демонстрация уровня разработки.',
+        suitedFor: 'диджеям, стримерам и организациям вечеринок, владельцам LED-вывесок и бегущих строк; отлично работает как витрина кастомного веб-сервиса под любую задачу.'
+    },
+    { 
+        title: 'COURT N°1', 
+        name: 'streetwear02', 
+        link: 'https://streetwear02.netlify.app/', 
+        category: 'Магазин',
+        description: 'Магазин уличной одежды в editorial-стилистике: карточки товаров с быстрым просмотром, категории, лукбук, манифест бренда, корзина. Вайб ночного города, баскетбола и аналоговой плёнки.',
+        suitedFor: 'брендам одежды и аксесссуаров, спорттоварам, кроссовкам, джинсовым брендам, мерчу музыкантов и спортивных клубов.'
+    },
+    { 
+        title: 'Sherlock Holmes', 
+        name: 'scherlock', 
+        link: 'https://scherlock.netlify.app/', 
+        category: 'Блог',
+        description: 'Концепт-сайт «консультирующего детектива» в викторианской стилистике: архив раскрытых дел, метод Холмса, специализация, отзывы клиентов и форма «передать дело». Три языка, узнаваемый юмор, запоминается с первого экрана.',
+        suitedFor: 'частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий — и как яркий образец «персонажного» бренда для любой ниши.'
+    },
+    { 
+        title: 'Volkswagen', 
+        name: 'alexdiler', 
+        link: 'https://alexdiler.vercel.app/', 
+        category: 'Портфолио',
+        description: 'Сайт автодилера: каталог моделей с характеристиками и ценами, фильтры (в наличии / кроссоверы / электро), блок услуг (кредит, trade-in, сервис), цифры доверия, отзывы и онлайн-запись на тест-драйв. Солидная корпоративная подача.',
+        suitedFor: 'автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу — любому автомобильному бизнесу с каталогом и записью.'
+    },
+    { 
+        title: 'Дмитрий', 
+        name: 'supermaster-2', 
+        link: 'https://supermaster-2.vercel.app/', 
+        category: 'Услуги',
+        description: 'Сайт мастера по ремонту и отделке: услуги, цена за час, калькуляторы работ и материалов с отправкой сметы, умный чат-помощник, подсказывающий цены по ключевым словам, кнопка «вызвать мастера». Практичный и убедительный.',
+        suitedFor: 'мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников — калькулятор легко перенастроить под расчёт стоимости любых услуг.'
+    },
+    { 
+        title: 'O³ STUDIO', 
+        name: 'osite-eta', 
+        link: 'https://osite-eta.vercel.app/', 
+        category: 'Лендинг',
+        description: 'Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка — ничего лишнего.',
+        suitedFor: 'фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам — всем, кто продаёт свои работы через портфолио.'
+    },
+    { 
+        title: 'NEURALMIND', 
+        name: 'psyhology-8jft', 
+        link: 'https://psyhology-8jft.vercel.app/', 
+        category: 'Сайт-визитка',
+        description: 'Сайт частного психолога в тёмной «нейро»-эстетике: анимированный фон-нейросеть, сильный эмоциональный заголовок («Вы не сломаны»), блоки метода и терапии, счётчики статистики, финальная форма записи. Выглядит дороже 90% сайтов в нише и сразу цепляет с первого экрана.',
+        suitedFor: 'психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики — всем экспертам, кто продаёт личные консультации.'
+    }
 ];
 
 function generateCard(site, index) {
@@ -37,8 +121,10 @@ function generateCard(site, index) {
 <div class="mt-auto">
 <div class="flex justify-between items-start mb-2">
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">${site.title}</h4>
-<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded">${site.category}</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">${site.category}</span>
 </div>
+<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">${site.description}</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> ${site.suitedFor}</p>
 <div class="flex justify-between items-center mt-4">
 <span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
 <button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
