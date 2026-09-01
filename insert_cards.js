@@ -22,14 +22,14 @@ function generateCard(site, index) {
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', '${site.link}')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
-<img alt="${site.title}" class="w-full h-full object-cover object-top" src="screenshots/${site.name}_pc.png"/>
+<img alt="${site.title}" class="w-full h-full object-cover object-top" src="screenshots/${site.name}_pc.webp"/>
 <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">Открыть</span></div>
 </div>
 <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[110%] h-1.5 bg-[#cbd5e1] rounded-b-xl"></div>
 </div>
 <div class="phone-wrap w-1/5 aspect-[9/19] bg-[#334155] rounded-xl p-1 relative shadow-sm ml-2 cursor-pointer" onclick="event.stopPropagation(); openPreview('mobile', '${site.link}')">
 <div class="w-full h-full bg-white rounded-lg overflow-hidden relative">
-<img alt="${site.title} Mobile" class="w-full h-full object-cover object-top" src="screenshots/${site.name}_mobile.png"/>
+<img alt="${site.title} Mobile" class="w-full h-full object-cover object-top" src="screenshots/${site.name}_mobile.webp"/>
 <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
 </div>
 </div>
