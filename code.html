@@ -127,7 +127,33 @@
     .phone-wrap:hover .open-overlay { opacity: 1; }
 
     body { min-height: max(884px, 100dvh); }
+
+    /* ===== Блок: монитор + телефон рядом ===== */
+    .devices { display: flex; align-items: flex-end; justify-content: center; gap: clamp(14px, 4vw, 44px); margin-bottom: 24px; }
+    .dev-desk { flex: 1 1 auto; min-width: 0; max-width: 660px; cursor: pointer; }
+    .dev-desk-screen { background: #111418; border-radius: 14px; padding: 10px; box-shadow: 0 14px 34px rgba(0,0,0,.22); position: relative; overflow: hidden; }
+    .dev-desk-screen img { display: block; width: 100%; height: auto; border-radius: 6px; transition: filter 0.3s ease; }
+    .dev-desk-stand { width: 88px; height: 32px; margin: 0 auto; background: linear-gradient(#1c2128, #14181d); clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%); }
+    .dev-desk-base { width: 170px; height: 8px; margin: 0 auto; background: #1c2128; border-radius: 4px; }
+    .dev-phone { flex: 0 0 clamp(110px, 28%, 200px); cursor: pointer; }
+    .dev-phone-frame { position: relative; background: #111418; border-radius: 26px; padding: 8px; box-shadow: 0 14px 34px rgba(0,0,0,.22); overflow: hidden; }
+    .dev-phone-frame img { display: block; width: 100%; height: auto; border-radius: 18px; transition: filter 0.3s ease; }
+    .dev-phone-notch { position: absolute; top: 13px; left: 50%; transform: translateX(-50%); width: 36%; height: 10px; background: #111418; border-radius: 999px; z-index: 2; }
+
+    .devices:has(.dev-desk:hover) .dev-phone img { filter: blur(3px); }
+    .devices:has(.dev-phone:hover) .dev-desk img { filter: blur(3px); }
+
+    .dev-desk-screen .open-overlay, .dev-phone-frame .open-overlay {
+        position: absolute; inset: 0;
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0; transition: opacity 0.3s ease;
+        background: rgba(0,0,0,0.2);
+        z-index: 10; pointer-events: none;
+        border-radius: inherit;
+    }
+    .dev-desk:hover .open-overlay, .dev-phone:hover .open-overlay { opacity: 1; }
 </style>
+
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col">
 <!-- TopAppBar -->
@@ -139,10 +165,13 @@
 </div>
 <nav class="hidden md:flex gap-8">
 <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Каталог сайтов</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200" href="#">Цены</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200" href="#">Обо мне</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200" href="#contacts" onclick="scrollToContacts()">Цены &amp; Заказ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity duration-200 flex items-center gap-1.5" href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer">
+    <svg class="w-4 h-4 text-[#e1306c]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Instagram
+</a>
 </nav>
-<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:opacity-90 active:scale-95 transition-all">
+<button onclick="scrollToContacts()" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:opacity-90 active:scale-95 transition-all">
     Контакты
 </button>
 </div>
@@ -168,8 +197,10 @@
 
 
 
+
 <!-- Card 1: NOCTA/08 -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://voguish-gold.vercel.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -190,11 +221,11 @@
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">NOCTA/08</h4>
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Магазин</span>
 </div>
-<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, quick-view и корзина. Вариант «для глобального рынка» — сдержанный, без лишнего шума.</p>
+<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, quick-view и корзина. Вариант «для глобального рынка» - сдержанный, без лишнего шума.</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> D2C-брендам одежды, фитнес- и бег-экипировке, вело- и скейт-комьюнити, молодым маркам аксесссуаров.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('NOCTA/08')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
@@ -203,6 +234,7 @@
 
 <!-- Card 2: ASPHALT SAINTS -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://streetwear01.netlify.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -223,52 +255,20 @@
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">ASPHALT SAINTS</h4>
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Магазин</span>
 </div>
-<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача из трёх — для молодого амбициозного бренда.</p>
+<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача из трёх - для молодого амбициозного бренда.</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> уличным брендам, мотоклубам, хип-хоп мерчу, барбершопам, брендам спортивной экипировки.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('ASPHALT SAINTS')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 3: 303 Timer -->
+<!-- Card 3: STUDIO 19 -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
-<div class="flex justify-between items-start mb-6 card-visual">
-<div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://303timer.vercel.app/')">
-<div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
-<img alt="303 Timer" class="w-full h-full object-cover object-top" src="screenshots/303timer_pc.webp"/>
-<div class="open-overlay"><span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">Открыть</span></div>
-</div>
-<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[110%] h-1.5 bg-[#cbd5e1] rounded-b-xl"></div>
-</div>
-<div class="phone-wrap w-1/5 aspect-[9/19] bg-[#334155] rounded-xl p-1 relative shadow-sm ml-2 cursor-pointer" onclick="event.stopPropagation(); openPreview('mobile', 'https://303timer.vercel.app/')">
-<div class="w-full h-full bg-white rounded-lg overflow-hidden relative">
-<img alt="303 Timer Mobile" class="w-full h-full object-cover object-top" src="screenshots/303timer_mobile.webp"/>
-<div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
-</div>
-</div>
-</div>
-<div class="mt-auto">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">303 Timer</h4>
-<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Приложение</span>
-</div>
-<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Лендинг бесплатного Windows-приложения «303 Screen Break Timer» (помодоро, фокус, медитация, дыхательные практики). Первый экран с кнопками скачивания, блоки «как это работает», режимов дыхания и фотогалереи; 6 языков интерфейса, ссылки на GitHub и донаты. Готовая формула «продукт + скачать + поддержать автора».</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> разработчикам приложений и плагинов, IT-стартапам, авторам утилит и цифровых продуктов — всем, кому нужен продающий сайт своего софта.</p>
-<div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
-    Подробнее
-</button>
-</div>
-</div>
-</div>
 
-<!-- Card 4: STUDIO 19 -->
-<div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://studio-19-pl.vercel.app/#hero')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -290,18 +290,19 @@
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Корпоративный</span>
 </div>
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Сайт фотостудии с арендой залов: каталог залов с ценами за час, фильтры по интерьерам (лофт / минимализм / классика), блок профессионального оборудования, «кодекс студии», отзывы и онлайн-бронирование. Чёрно-белая премиальная подача в духе fashion-editorial.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий — любому бизнесу с почасовой арендой площадей и бронированием.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий - любому бизнесу с почасовой арендой площадей и бронированием.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('STUDIO 19')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 5: Natalia Aesthetics -->
+<!-- Card 4: Natalia Aesthetics -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://cosmetic-ivory.vercel.app/#home')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -325,16 +326,17 @@
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Сайт косметолога: услуги с ценами, портфолио-кейсы с фото, блок «обо мне», календарь записи, форма связи, светлая эстетичная вёрстка плюс тёмная тема на выбор. Всё, что нужно beauty-мастеру, чтобы принимать клиентов онлайн.</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> косметологам, мастерам маникюра, бровистам, визажистам, парикмахерам, массажистам, тату-мастерам, салонам красоты.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('Natalia Aesthetics')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 6: LUX LED Studio -->
+<!-- Card 5: LUX LED Studio -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://www.ledstudio.duckdns.org/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -355,19 +357,20 @@
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">LUX LED Studio</h4>
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Лендинг</span>
 </div>
-<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Интерактивное веб-приложение — симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент — наглядная демонстрация уровня разработки.</p>
+<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Интерактивное веб-приложение - симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент - наглядная демонстрация уровня разработки.</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> диджеям, стримерам и организациям вечеринок, владельцам LED-вывесок и бегущих строк; отлично работает как витрина кастомного веб-сервиса под любую задачу.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('LUX LED Studio')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 7: COURT N°1 -->
+<!-- Card 6: COURT N°1 -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://streetwear02.netlify.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -391,16 +394,17 @@
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Магазин уличной одежды в editorial-стилистике: карточки товаров с быстрым просмотром, категории, лукбук, манифест бренда, корзина. Вайб ночного города, баскетбола и аналоговой плёнки.</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> брендам одежды и аксесссуаров, спорттоварам, кроссовкам, джинсовым брендам, мерчу музыкантов и спортивных клубов.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('COURT N°1')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 8: Sherlock Holmes -->
+<!-- Card 7: Sherlock Holmes -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://scherlock.netlify.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -422,18 +426,19 @@
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Блог</span>
 </div>
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Концепт-сайт «консультирующего детектива» в викторианской стилистике: архив раскрытых дел, метод Холмса, специализация, отзывы клиентов и форма «передать дело». Три языка, узнаваемый юмор, запоминается с первого экрана.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий — и как яркий образец «персонажного» бренда для любой ниши.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий - и как яркий образец «персонажного» бренда для любой ниши.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('Sherlock Holmes')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 9: Volkswagen -->
+<!-- Card 8: Volkswagen -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://alexdiler.vercel.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -455,18 +460,19 @@
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Портфолио</span>
 </div>
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Сайт автодилера: каталог моделей с характеристиками и ценами, фильтры (в наличии / кроссоверы / электро), блок услуг (кредит, trade-in, сервис), цифры доверия, отзывы и онлайн-запись на тест-драйв. Солидная корпоративная подача.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу — любому автомобильному бизнесу с каталогом и записью.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу - любому автомобильному бизнесу с каталогом и записью.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('Volkswagen')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 10: Дмитрий -->
+<!-- Card 9: Дмитрий -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://supermaster-2.vercel.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -488,18 +494,19 @@
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Услуги</span>
 </div>
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Сайт мастера по ремонту и отделке: услуги, цена за час, калькуляторы работ и материалов с отправкой сметы, умный чат-помощник, подсказывающий цены по ключевым словам, кнопка «вызвать мастера». Практичный и убедительный.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников — калькулятор легко перенастроить под расчёт стоимости любых услуг.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников - калькулятор легко перенастроить под расчёт стоимости любых услуг.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('Дмитрий')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 11: O³ STUDIO -->
+<!-- Card 10: O³ STUDIO -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://osite-eta.vercel.app/')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -520,33 +527,36 @@
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">O³ STUDIO</h4>
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Лендинг</span>
 </div>
-<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка — ничего лишнего.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам — всем, кто продаёт свои работы через портфолио.</p>
+<p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка - ничего лишнего.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам - всем, кто продаёт свои работы через портфолио.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('O³ STUDIO')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
 </div>
 </div>
 
-<!-- Card 12: NEURALMIND -->
+<!-- Card 11: NEURALMIND -->
 <div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
-<div class="flex justify-between items-start mb-6 card-visual">
-<div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', 'https://psyhology-8jft.vercel.app/')">
-<div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
-<img alt="NEURALMIND" class="w-full h-full object-cover object-top" src="screenshots/psyhology-8jft_pc.webp"/>
-<div class="open-overlay"><span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">Открыть</span></div>
-</div>
-<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[110%] h-1.5 bg-[#cbd5e1] rounded-b-xl"></div>
-</div>
-<div class="phone-wrap w-1/5 aspect-[9/19] bg-[#334155] rounded-xl p-1 relative shadow-sm ml-2 cursor-pointer" onclick="event.stopPropagation(); openPreview('mobile', 'https://psyhology-8jft.vercel.app/')">
-<div class="w-full h-full bg-white rounded-lg overflow-hidden relative">
-<img alt="NEURALMIND Mobile" class="w-full h-full object-cover object-top" src="screenshots/psyhology-8jft_mobile.webp"/>
-<div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
-</div>
-</div>
+
+<div class="devices card-visual">
+  <div class="dev-desk" onclick="event.stopPropagation(); openPreview('desktop', 'https://psyhology-8jft.vercel.app/')">
+    <div class="dev-desk-screen">
+      <img src="screenshots/psyhology-8jft_pc.webp" alt="Версия для ПК">
+      <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">Открыть</span></div>
+    </div>
+    <div class="dev-desk-stand"></div>
+    <div class="dev-desk-base"></div>
+  </div>
+  <div class="dev-phone" onclick="event.stopPropagation(); openPreview('mobile', 'https://psyhology-8jft.vercel.app/')">
+    <div class="dev-phone-frame">
+      <div class="dev-phone-notch"></div>
+      <img src="screenshots/psyhology-8jft_mobile.webp" alt="Мобильная версия">
+      <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
+    </div>
+  </div>
 </div>
 <div class="mt-auto">
 <div class="flex justify-between items-start mb-2">
@@ -554,10 +564,10 @@
 <span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded whitespace-nowrap ml-2">Сайт-визитка</span>
 </div>
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">Сайт частного психолога в тёмной «нейро»-эстетике: анимированный фон-нейросеть, сильный эмоциональный заголовок («Вы не сломаны»), блоки метода и терапии, счётчики статистики, финальная форма записи. Выглядит дороже 90% сайтов в нише и сразу цепляет с первого экрана.</p>
-<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики — всем экспертам, кто продаёт личные консультации.</p>
+<p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики - всем экспертам, кто продаёт личные консультации.</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('NEURALMIND')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
@@ -565,18 +575,221 @@
 </div>
 </div>
 </section>
+
+<!-- Contacts Section / Окно для контактов -->
+<section id="contacts" class="mt-20 md:mt-28 pt-10 scroll-mt-24 border-t border-outline-variant/40">
+  <div class="text-center mb-12">
+
+    <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+      Понравился сайт из каталога или нужен проект под ключ? Напишите мне в Instagram или оставьте сообщение через форму - помогу выбрать решение и быстро запуститься.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <!-- Left Column: Instagram & Direct Contact Card -->
+    <div class="lg:col-span-5 flex flex-col gap-6 justify-between">
+      <!-- Main Instagram Highlight Card -->
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#ffffff] via-[#f9faff] to-[#eef4ff] border border-outline-variant/50 p-6 md:p-8 shadow-[0px_4px_25px_rgba(0,0,0,0.06)] hover:shadow-[0px_10px_35px_rgba(0,0,0,0.1)] transition-all duration-300 group">
+        <!-- Ambient Decorative Glow -->
+        <div class="absolute -top-14 -right-14 w-44 h-44 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-full blur-3xl opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity"></div>
+        
+        <div class="flex items-center gap-4 mb-5">
+          <!-- Instagram Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] p-[2px] shadow-md flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+              <svg class="w-7 h-7 text-[#e1306c]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-headline-md text-lg font-bold text-on-surface">olegwebdesign</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-700">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span>
+                Direct открыт
+              </span>
+            </div>
+            <p class="text-xs text-on-surface-variant">Instagram &bull; Web Design &amp; Development</p>
+          </div>
+        </div>
+
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+          Подписывайтесь на <strong class="text-on-surface font-semibold">@olegwebdesign</strong>, следите за новыми сайтами, кейсами и пишите в Direct - самый быстрый способ получить консультацию по любому проекту.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-medium text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-98 transition-all">
+            <span>Написать в Instagram</span>
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          </a>
+          <button type="button" onclick="copyInstagramHandle()" id="copyInstBtn" class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl border border-outline-variant/60 bg-white hover:bg-slate-50 text-on-surface text-sm font-medium transition-all active:scale-98 shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">content_copy</span>
+            <span id="copyInstText">@olegwebdesign</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Guarantees / Advantages Card -->
+      <div class="bg-surface rounded-2xl border border-outline-variant/50 p-6 space-y-4">
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">bolt</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-on-surface">Быстрый запуск за 1-2 дня</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Выбранный проект адаптируется под ваши товары, текст и фирменный стиль в кратчайшие сроки.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">devices</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-on-surface">Идеальная адаптивность</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Высокая скорость загрузки и безупречный вид на смартфонах, ноутбуках и больших экранах.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">support_agent</span>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-on-surface">Полная настройка под ключ</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Помощь с покупкой домена, подключением хостинга, форм заявок и мессенджеров.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Contact Form (Окно для контактов) -->
+    <div class="lg:col-span-7 flex flex-col">
+      <div class="bg-white rounded-2xl border border-outline-variant/60 p-6 md:p-8 shadow-[0px_4px_25px_rgba(0,0,0,0.05)] relative flex-1 flex flex-col justify-between">
+        <div class="flex items-center justify-between pb-5 mb-5 border-b border-outline-variant/30">
+          <div>
+            <h3 class="text-xl font-bold text-on-surface">Форма для связи</h3>
+            <p class="text-xs md:text-sm text-on-surface-variant mt-0.5">Оставьте заявку - обсудим ваш проект, наполнение и запуск.</p>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined">send</span>
+          </div>
+        </div>
+
+        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="clientName">
+              Ваше имя <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="clientName" required placeholder="Например, Александр" class="w-full px-4 py-3 rounded-xl border border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface text-sm bg-white outline-none transition-all placeholder:text-outline/60"/>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="clientContact">
+                Контакт для ответа <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="clientContact" required placeholder="@telegram, телефон или email" class="w-full px-4 py-3 rounded-xl border border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface text-sm bg-white outline-none transition-all placeholder:text-outline/60"/>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="projectSelect">
+                Интересующий сайт
+              </label>
+              <select id="projectSelect" class="w-full px-4 py-3 rounded-xl border border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface text-sm bg-white outline-none transition-all cursor-pointer">
+                <option value="">Выберите из каталога (необязательно)</option>
+                <option value="NOCTA/08">NOCTA/08 (Магазин одежды)</option>
+                <option value="ASPHALT SAINTS">ASPHALT SAINTS (Дроп-коллекция)</option>
+                <option value="STUDIO 19">STUDIO 19 (Фотостудия / Аренда)</option>
+                <option value="Natalia Aesthetics">Natalia Aesthetics (Косметология / Салон)</option>
+                <option value="LUX LED Studio">LUX LED Studio (Интерактивный сайт)</option>
+                <option value="COURT N°1">COURT N°1 (Editorial магазин)</option>
+                <option value="Sherlock Holmes">Sherlock Holmes (Концепт-блог)</option>
+                <option value="Volkswagen">Volkswagen (Автодилер / Каталог)</option>
+                <option value="Дмитрий">Дмитрий (Мастер / Калькулятор услуг)</option>
+                <option value="O³ STUDIO">O³ STUDIO (Портфолио креатора)</option>
+                <option value="NEURALMIND">NEURALMIND (Сайт психолога / Эксперта)</option>
+                <option value="Индивидуальный проект">Индивидуальный сайт с нуля</option>
+                <option value="Другой вопрос">Другой вопрос / Консультация</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="clientMessage">
+              Пожелания или вопрос
+            </label>
+            <textarea id="clientMessage" rows="3" placeholder="Расскажите о вашей задаче, пожеланиях по сайту или сроках..." class="w-full px-4 py-3 rounded-xl border border-outline-variant/70 focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface text-sm bg-white outline-none transition-all placeholder:text-outline/60 resize-none"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <button type="submit" id="submitFormBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+              <span>Отправить сообщение</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+            <span class="text-xs text-on-surface-variant text-center sm:text-right">
+              Instagram: <a href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">@olegwebdesign</a>
+            </span>
+          </div>
+        </form>
+
+        <!-- Notice State (Отправка пока недоступна, перейти в Instagram) -->
+        <div id="formSuccessState" class="hidden text-center py-10 px-4">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] p-[2px] shadow-md mx-auto mb-4">
+            <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#e1306c]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold mb-3">
+            <span class="material-symbols-outlined text-[16px]">info</span>
+            Отправка пока недоступна
+          </div>
+
+          <h4 class="text-xl md:text-2xl font-bold text-on-surface mb-2">Перейти в Instagram</h4>
+          <p class="text-sm text-on-surface-variant max-w-md mx-auto mb-6 leading-relaxed">
+            Форма временно на техническом обновлении. Пожалуйста, напишите мне напрямую в Instagram Direct - я сразу отвечу и проконсультирую по любому вопросу.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-sm font-semibold shadow-md hover:shadow-lg hover:brightness-105 active:scale-98 transition-all">
+              <span>Перейти в Instagram</span>
+              <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            </a>
+            <button type="button" onclick="resetContactForm()" class="w-full sm:w-auto px-5 py-3 rounded-full border border-outline-variant text-on-surface text-sm font-medium hover:bg-slate-50 transition-colors">
+              Вернуться назад
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- Footer -->
 <footer class="bg-surface-container-low mt-xl border-t border-outline-variant">
 <div class="flex flex-col md:flex-row justify-between items-center px-lg py-lg max-w-container-max mx-auto gap-md">
-<span class="font-headline-md text-headline-md text-primary">SiteMarket</span>
-<p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left">© 2024 SiteMarket Premium Digital Assets</p>
-<div class="flex gap-4 flex-wrap justify-center">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">License Info</a>
+<div class="flex items-center gap-3">
+  <span class="font-headline-md text-headline-md text-primary">SiteMarket</span>
+  <span class="text-outline-variant hidden sm:inline">|</span>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hidden sm:flex items-center gap-1.5" href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer">
+    <svg class="w-4 h-4 text-[#e1306c]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Instagram @olegwebdesign
+  </a>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left">© 2024 SiteMarket &bull; Разработка сайтов</p>
+<div class="flex gap-5 flex-wrap justify-center items-center">
+  <a class="font-label-md text-label-md text-primary font-semibold hover:underline transition-colors" href="#contacts" onclick="scrollToContacts()">Окно для контактов</a>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://instagram.com/olegwebdesign" target="_blank" rel="noopener noreferrer">
+    <svg class="w-3.5 h-3.5 text-[#e1306c]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Instagram
+  </a>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Политика</a>
+  <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Условия</a>
 </div>
 </div>
 </footer>
@@ -593,9 +806,7 @@
 <div class="w-full h-full bg-[#1c1c1e] rounded-t-2xl rounded-b-lg p-3 md:p-5 relative shadow-[inset_0_0_0_1px_#3a3a3c]">
 <div class="absolute top-1.5 md:top-2 left-1/2 -translate-x-1/2 w-1 h-1 md:w-1.5 md:h-1.5 bg-[#2c2c2e] rounded-full border border-[#111]"></div>
 <div class="w-full h-full bg-white overflow-hidden relative" id="desktopIframeWrapper">
-<div class="h-full" style="width: calc(100% + 32px); margin-left: -16px;">
 <iframe class="w-full h-full border-0" id="desktopIframe" src=""></iframe>
-</div>
 </div>
 <div class="absolute bottom-1 left-1/2 -translate-x-1/2 text-[8px] md:text-[10px] text-[#555] font-semibold tracking-widest">MACBOOK</div>
 </div>
@@ -647,17 +858,15 @@
         const targetWidth = 1280;
         if (wrapperWidth > 0 && wrapperWidth < targetWidth) {
             const scale = wrapperWidth / targetWidth;
-            const extraWidth = 32 / scale;
-            const shiftLeft = -16 / scale;
-            desktopIframe.style.width = (targetWidth + extraWidth) + 'px';
-            desktopIframe.style.marginLeft = shiftLeft + 'px';
+            desktopIframe.style.width = targetWidth + 'px';
+            desktopIframe.style.marginLeft = '0px';
             const wrapperHeight = desktopIframeWrapper.clientHeight;
             desktopIframe.style.height = (wrapperHeight / scale) + 'px';
             desktopIframe.style.transform = `scale(${scale})`;
             desktopIframe.style.transformOrigin = 'top left';
         } else {
-            desktopIframe.style.width = 'calc(100% + 32px)';
-            desktopIframe.style.marginLeft = '-16px';
+            desktopIframe.style.width = '100%';
+            desktopIframe.style.marginLeft = '0px';
             desktopIframe.style.height = '100%';
             desktopIframe.style.transform = 'none';
         }
@@ -714,6 +923,57 @@
                     resizeObserver.observe(desktopIframeWrapper);
                 }
             }, 50);
+        }
+    }
+
+    
+    function scrollToContacts(projectName) {
+        const el = document.getElementById('contacts');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            if (projectName) {
+                const select = document.getElementById('projectSelect');
+                if (select) {
+                    select.value = projectName;
+                    select.classList.add('ring-2', 'ring-primary');
+                    setTimeout(() => select.classList.remove('ring-2', 'ring-primary'), 1500);
+                }
+            }
+        }
+    }
+
+    function copyInstagramHandle() {
+        const text = 'olegwebdesign';
+        navigator.clipboard.writeText(text).then(() => {
+            const btnText = document.getElementById('copyInstText');
+            if (btnText) {
+                const prev = btnText.textContent;
+                btnText.textContent = 'Скопировано!';
+                setTimeout(() => btnText.textContent = prev, 2000);
+            }
+        }).catch(() => {
+            prompt('Instagram никнейм:', text);
+        });
+    }
+
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccessState');
+        if (form && success) {
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    function resetContactForm() {
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccessState');
+        if (form && success) {
+            form.reset();
+            success.classList.add('hidden');
+            form.classList.remove('hidden');
         }
     }
 

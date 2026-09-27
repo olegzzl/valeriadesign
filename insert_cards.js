@@ -6,7 +6,7 @@ const sites = [
         name: 'voguish-gold', 
         link: 'https://voguish-gold.vercel.app/', 
         category: 'Магазин',
-        description: 'Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, quick-view и корзина. Вариант «для глобального рынка» — сдержанный, без лишнего шума.',
+        description: 'Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, quick-view и корзина. Вариант «для глобального рынка» - сдержанный, без лишнего шума.',
         suitedFor: 'D2C-брендам одежды, фитнес- и бег-экипировке, вело- и скейт-комьюнити, молодым маркам аксесссуаров.'
     },
     { 
@@ -14,16 +14,8 @@ const sites = [
         name: 'streetwear01', 
         link: 'https://streetwear01.netlify.app/', 
         category: 'Магазин',
-        description: 'Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача из трёх — для молодого амбициозного бренда.',
+        description: 'Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача из трёх - для молодого амбициозного бренда.',
         suitedFor: 'уличным брендам, мотоклубам, хип-хоп мерчу, барбершопам, брендам спортивной экипировки.'
-    },
-    { 
-        title: '303 Timer', 
-        name: '303timer', 
-        link: 'https://303timer.vercel.app/', 
-        category: 'Приложение',
-        description: 'Лендинг бесплатного Windows-приложения «303 Screen Break Timer» (помодоро, фокус, медитация, дыхательные практики). Первый экран с кнопками скачивания, блоки «как это работает», режимов дыхания и фотогалереи; 6 языков интерфейса, ссылки на GitHub и донаты. Готовая формула «продукт + скачать + поддержать автора».',
-        suitedFor: 'разработчикам приложений и плагинов, IT-стартапам, авторам утилит и цифровых продуктов — всем, кому нужен продающий сайт своего софта.'
     },
     { 
         title: 'STUDIO 19', 
@@ -31,7 +23,7 @@ const sites = [
         link: 'https://studio-19-pl.vercel.app/#hero', 
         category: 'Корпоративный',
         description: 'Сайт фотостудии с арендой залов: каталог залов с ценами за час, фильтры по интерьерам (лофт / минимализм / классика), блок профессионального оборудования, «кодекс студии», отзывы и онлайн-бронирование. Чёрно-белая премиальная подача в духе fashion-editorial.',
-        suitedFor: 'фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий — любому бизнесу с почасовой арендой площадей и бронированием.'
+        suitedFor: 'фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий - любому бизнесу с почасовой арендой площадей и бронированием.'
     },
     { 
         title: 'Natalia Aesthetics', 
@@ -46,7 +38,7 @@ const sites = [
         name: 'ledstudio', 
         link: 'https://www.ledstudio.duckdns.org/', 
         category: 'Лендинг',
-        description: 'Интерактивное веб-приложение — симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент — наглядная демонстрация уровня разработки.',
+        description: 'Интерактивное веб-приложение - симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент - наглядная демонстрация уровня разработки.',
         suitedFor: 'диджеям, стримерам и организациям вечеринок, владельцам LED-вывесок и бегущих строк; отлично работает как витрина кастомного веб-сервиса под любую задачу.'
     },
     { 
@@ -63,7 +55,7 @@ const sites = [
         link: 'https://scherlock.netlify.app/', 
         category: 'Блог',
         description: 'Концепт-сайт «консультирующего детектива» в викторианской стилистике: архив раскрытых дел, метод Холмса, специализация, отзывы клиентов и форма «передать дело». Три языка, узнаваемый юмор, запоминается с первого экрана.',
-        suitedFor: 'частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий — и как яркий образец «персонажного» бренда для любой ниши.'
+        suitedFor: 'частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий - и как яркий образец «персонажного» бренда для любой ниши.'
     },
     { 
         title: 'Volkswagen', 
@@ -71,7 +63,7 @@ const sites = [
         link: 'https://alexdiler.vercel.app/', 
         category: 'Портфолио',
         description: 'Сайт автодилера: каталог моделей с характеристиками и ценами, фильтры (в наличии / кроссоверы / электро), блок услуг (кредит, trade-in, сервис), цифры доверия, отзывы и онлайн-запись на тест-драйв. Солидная корпоративная подача.',
-        suitedFor: 'автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу — любому автомобильному бизнесу с каталогом и записью.'
+        suitedFor: 'автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу - любому автомобильному бизнесу с каталогом и записью.'
     },
     { 
         title: 'Дмитрий', 
@@ -79,15 +71,15 @@ const sites = [
         link: 'https://supermaster-2.vercel.app/', 
         category: 'Услуги',
         description: 'Сайт мастера по ремонту и отделке: услуги, цена за час, калькуляторы работ и материалов с отправкой сметы, умный чат-помощник, подсказывающий цены по ключевым словам, кнопка «вызвать мастера». Практичный и убедительный.',
-        suitedFor: 'мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников — калькулятор легко перенастроить под расчёт стоимости любых услуг.'
+        suitedFor: 'мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников - калькулятор легко перенастроить под расчёт стоимости любых услуг.'
     },
     { 
         title: 'O³ STUDIO', 
         name: 'osite-eta', 
         link: 'https://osite-eta.vercel.app/', 
         category: 'Лендинг',
-        description: 'Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка — ничего лишнего.',
-        suitedFor: 'фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам — всем, кто продаёт свои работы через портфолио.'
+        description: 'Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка - ничего лишнего.',
+        suitedFor: 'фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам - всем, кто продаёт свои работы через портфолио.'
     },
     { 
         title: 'NEURALMIND', 
@@ -95,14 +87,30 @@ const sites = [
         link: 'https://psyhology-8jft.vercel.app/', 
         category: 'Сайт-визитка',
         description: 'Сайт частного психолога в тёмной «нейро»-эстетике: анимированный фон-нейросеть, сильный эмоциональный заголовок («Вы не сломаны»), блоки метода и терапии, счётчики статистики, финальная форма записи. Выглядит дороже 90% сайтов в нише и сразу цепляет с первого экрана.',
-        suitedFor: 'психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики — всем экспертам, кто продаёт личные консультации.'
+        suitedFor: 'психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики - всем экспертам, кто продаёт личные консультации.'
     }
 ];
 
 function generateCard(site, index) {
-    return `
-<!-- Card ${index + 1}: ${site.title} -->
-<div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+    const isTest = site.name === 'psyhology-8jft';
+    const visualBlock = isTest ? `
+<div class="devices card-visual">
+  <div class="dev-desk" onclick="event.stopPropagation(); openPreview('desktop', '${site.link}')">
+    <div class="dev-desk-screen">
+      <img src="screenshots/${site.name}_pc.webp" alt="Версия для ПК">
+      <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-4 py-1.5 rounded-full text-xs font-semibold shadow-md">Открыть</span></div>
+    </div>
+    <div class="dev-desk-stand"></div>
+    <div class="dev-desk-base"></div>
+  </div>
+  <div class="dev-phone" onclick="event.stopPropagation(); openPreview('mobile', '${site.link}')">
+    <div class="dev-phone-frame">
+      <div class="dev-phone-notch"></div>
+      <img src="screenshots/${site.name}_mobile.webp" alt="Мобильная версия">
+      <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
+    </div>
+  </div>
+</div>` : `
 <div class="flex justify-between items-start mb-6 card-visual">
 <div class="laptop-wrap w-3/4 aspect-[16/10] bg-[#e2e8f0] rounded-t-md p-1 relative shadow-sm cursor-pointer" onclick="event.stopPropagation(); openPreview('desktop', '${site.link}')">
 <div class="w-full h-full bg-white rounded-sm overflow-hidden relative">
@@ -117,7 +125,12 @@ function generateCard(site, index) {
 <div class="open-overlay"><span class="bg-white/95 text-slate-900 px-2 py-0.5 rounded-full text-[10px] font-semibold shadow-md">Открыть</span></div>
 </div>
 </div>
-</div>
+</div>`;
+
+    return `
+<!-- Card ${index + 1}: ${site.title} -->
+<div class="bg-surface rounded-xl border border-outline-variant/50 p-6 device-shadow device-hover flex flex-col cursor-pointer group">
+${visualBlock}
 <div class="mt-auto">
 <div class="flex justify-between items-start mb-2">
 <h4 class="font-headline-md text-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">${site.title}</h4>
@@ -126,8 +139,8 @@ function generateCard(site, index) {
 <p class="text-on-surface-variant text-sm mb-3 leading-relaxed line-clamp-3">${site.description}</p>
 <p class="text-on-surface text-xs mb-4 leading-relaxed"><strong>Подойдёт:</strong> ${site.suitedFor}</p>
 <div class="flex justify-between items-center mt-4">
-<span class="font-label-md text-label-md text-on-surface font-medium">от 15,000 грн.</span>
-<button class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
+<span class="font-label-md text-label-md text-on-surface font-medium">от 3,000 грн.</span>
+<button onclick="event.stopPropagation(); scrollToContacts('${site.title.replace(/'/g, "\\'")}')" class="text-primary font-label-sm text-label-sm bg-primary/10 px-4 py-1.5 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
     Подробнее
 </button>
 </div>
