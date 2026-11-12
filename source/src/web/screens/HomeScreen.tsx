@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import type { CategoryKey, Lang, Project } from '../../types';
-import { CATEGORY_ORDER, UI } from '../../i18n';
+import { CATEGORY_ORDER, EMAIL_ADDRESS, TELEGRAM_HANDLE, TELEGRAM_URL, UI } from '../../i18n';
 import { Pixel } from '../components/Pixel';
 import { SocialLinks } from '../components/SocialLinks';
 import { LangSwitch } from '../components/LangSwitch';
@@ -41,6 +41,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
               <span>{t.brand}</span>
             </div>
             <div className="masthead-right">
+              <SocialLinks t={t} className="masthead-social" />
               <LangSwitch lang={lang} onChange={onLang} ariaLabel={t.langAria} />
               <button
                 className="menu-toggle"
@@ -67,7 +68,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
                 {t.ctaEstimate} ↗
               </button>
             </div>
-            <SocialLinks t={t} />
+            <SocialLinks t={t} className="strip-social" />
           </div>
 
           {menu && (
@@ -89,6 +90,16 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
               <button type="button" onClick={() => onRequest('contact')}>
                 {t.ctaContact}
                 <span>↗</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMenu(false);
+                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                {t.menuContacts}
+                <span>↓</span>
               </button>
             </nav>
           )}
@@ -253,7 +264,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
             </div>
           </section>
 
-          <section className="contact-panel">
+          <section className="contact-panel" id="contacts">
             <div className="contact-panel-top">
               <span className="section-kicker">{t.contactKicker}</span>
               <Pixel />
@@ -279,6 +290,12 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
                 {t.ctaContact}
               </button>
             </div>
+            <p className="contact-direct">
+              <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
+              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                {TELEGRAM_HANDLE}
+              </a>
+            </p>
             <p className="connection-status">{t.contactStatus}</p>
           </section>
 

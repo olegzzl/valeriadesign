@@ -246,3 +246,16 @@ img{display:block;max-width:100%}
   .services-head h2{max-width:22ch}
   .services-intro{font-size:16px}
 }
+.social-links.masthead-social{display:none;margin-right:4px}
+.social-links.masthead-social .social-icons button,.social-links.masthead-social .social-icons a{width:36px;min-height:36px;padding:6px}
+.contact-direct{display:flex;flex-wrap:wrap;gap:8px 20px;margin:28px 0 4px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono-font);font-size:12px;line-height:1.4}
+.contact-direct a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--raspberry);padding-bottom:2px;word-break:break-all}
+@media(min-width:650px){
+  .social-links.masthead-social{display:flex}
+  .strip-social{display:none}
+}
+@media(max-width:649px){
+  .header-contacts{flex-wrap:wrap}
+  .strip-social .social-icons .social-mail{display:none}
+  .strip-social .social-icons button,.strip-social .social-icons a{width:40px;min-height:40px;padding:7px}
+}

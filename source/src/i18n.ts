@@ -92,6 +92,9 @@ export interface UiDict {
   editRequest: string;
   telegramPending: string;
   instagramAria: string;
+  telegramAria: string;
+  emailAria: string;
+  menuContacts: string;
   requestSocialsNote: string;
   orderFromPreview: string;
   seoKicker: string;
@@ -201,6 +204,9 @@ const ru: UiDict = {
   editRequest: 'Изменить заявку',
   telegramPending: 'Ссылка Telegram появится позже.',
   instagramAria: 'Instagram — @olegwebdesign',
+  telegramAria: 'Telegram @spokum_chat',
+  emailAria: 'Написать на почту olegzzl@zohomail.eu',
+  menuContacts: 'Контакты',
   requestSocialsNote: 'Соцссылки настраиваются.',
   orderFromPreview: 'Заказать',
   seoKicker: 'ЧТО МЫ ДЕЛАЕМ',
@@ -323,6 +329,9 @@ const uk: UiDict = {
   editRequest: 'Змінити заявку',
   telegramPending: 'Посилання Telegram з’явиться пізніше.',
   instagramAria: 'Instagram — @olegwebdesign',
+  telegramAria: 'Telegram @spokum_chat',
+  emailAria: 'Написати на пошту olegzzl@zohomail.eu',
+  menuContacts: 'Контакти',
   requestSocialsNote: 'Соцпосилання налаштовуються.',
   orderFromPreview: 'Замовити',
   seoKicker: 'ЩО МИ РОБИМО',
@@ -440,6 +449,9 @@ const en: UiDict = {
   editRequest: 'Edit the request',
   telegramPending: 'The Telegram link will appear later.',
   instagramAria: 'Instagram — @olegwebdesign',
+  telegramAria: 'Telegram @spokum_chat',
+  emailAria: 'Email olegzzl@zohomail.eu',
+  menuContacts: 'Contacts',
   requestSocialsNote: 'Social links are being set up.',
   orderFromPreview: 'Order',
   seoKicker: 'WHAT WE DO',
@@ -470,3 +482,6 @@ const en: UiDict = {
 export const UI: Record<Lang, UiDict> = { ru, uk, en };
 
 export const INSTAGRAM_URL = 'https://instagram.com/olegwebdesign';
+export const TELEGRAM_URL = 'https://t.me/spokum_chat';
+export const TELEGRAM_HANDLE = '@spokum_chat';
+export const EMAIL_ADDRESS = 'olegzzl@zohomail.eu';
