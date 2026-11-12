@@ -1,0 +1,207 @@
+[
+  {
+    "id": "nocta08",
+    "title": "NOCTA/08",
+    "category": "shop",
+    "url": "https://voguish-gold.vercel.app/",
+    "shots": { "pc": "assets/shots/nocta08-pc.webp", "mobile": "assets/shots/nocta08-mobile.webp" },
+    "description": {
+      "ru": "Магазин уличной одежды на английском с ценами в $: чистый минимализм, манифест, лукбук, фильтры категорий, быстрый просмотр товара и корзина. Сдержанный вариант «для глобального рынка».",
+      "uk": "Магазин вуличної одежі англійською з цінами в $: чистий мінімалізм, маніфест, лукбук, фільтри категорій, швидкий перегляд товару й кошик. Стриманий варіант «для глобального ринку».",
+      "en": "Streetwear store in English with $ prices: clean minimalism, manifesto, lookbook, category filters, quick product view and cart. A restrained option for the global market."
+    },
+    "fit": {
+      "ru": "D2C-брендам одежды, фитнес- и бег-экипировке, вело- и скейт-комьюнити, молодым маркам аксессуаров.",
+      "uk": "D2C-брендам одягу, фітнес- і біговій екіпіровці, вело- та скейт-спільнотам, молодим маркам аксесуарів.",
+      "en": "D2C clothing brands, fitness and running gear, bike and skate communities, young accessory labels."
+    }
+  },
+  {
+    "id": "asphalt",
+    "title": "ASPHALT SAINTS",
+    "category": "shop",
+    "url": "https://streetwear01.netlify.app/",
+    "shots": { "pc": "assets/shots/asphalt-pc.webp", "mobile": "assets/shots/asphalt-mobile.webp" },
+    "description": {
+      "ru": "Магазин под «дроп»-модель: лимитированная коллекция на первом экране, дерзкая ночная кампания, лукбук-сцены, коллекции муж/жен, цены в гривне, корзина. Самая смелая подача — для молодого амбициозного бренда.",
+      "uk": "Магазин під «дроп»-модель: лімітована колекція на першому екрані, зухвала нічна кампанія, лукбук-сцени, колекції чоловіче/жіноче, ціни в гривні, кошик. Найсміливіша подача — для молодого амбітного бренду.",
+      "en": "A store built for the drop model: limited collection on the first screen, bold night campaign, lookbook scenes, men’s and women’s lines, hryvnia prices, cart. The boldest presentation — for a young ambitious brand."
+    },
+    "fit": {
+      "ru": "Уличным брендам, мотоклубам, хип-хоп мерчу, барбершопам, брендам спортивной экипировки.",
+      "uk": "Вуличним брендам, мотоклубам, хіп-хоп мерчу, барбершопам, брендам спортивної екіпіровки.",
+      "en": "Streetwear labels, motorcycle clubs, hip-hop merch, barbershops, sportswear brands."
+    }
+  },
+  {
+    "id": "studio19",
+    "title": "STUDIO 19",
+    "category": "corporate",
+    "url": "https://studio-19-pl.vercel.app/#hero",
+    "shots": { "pc": "assets/shots/studio19-pc.webp", "mobile": "assets/shots/studio19-mobile.webp" },
+    "description": {
+      "ru": "Сайт фотостудии с арендой залов: каталог залов с ценами за час, фильтры по интерьерам (лофт / минимализм / классика), блок профессионального оборудования, «кодекс студии», отзывы и онлайн-бронирование. Чёрно-белая премиальная подача в духе fashion-editorial.",
+      "uk": "Сайт фотостудії з орендою залів: каталог залів із цінами за годину, фільтри за інтер’єрами (лофт / мінімалізм / класика), блок професійного обладнання, «кодекс студії», відгуки та онлайн-бронювання. Чорно-біла преміальна подача в дусі fashion-editorial.",
+      "en": "A photo studio site with hall rental: hall catalogue with hourly rates, interior filters (loft / minimalism / classic), professional equipment section, studio codex, reviews and online booking. Premium black-and-white styling in a fashion-editorial spirit."
+    },
+    "fit": {
+      "ru": "Фотостудиям, коворкингам, студиям йоги и танцев, репетиционным базам и звукозаписи, залам для мероприятий — бизнесу с почасовой арендой и бронированием.",
+      "uk": "Фотостудіям, коворкінгам, студіям йоги й танців, репетиційним базам і звукозапису, залам для подій — бізнесу з погодинною орендою та бронюванням.",
+      "en": "Photo studios, coworkings, yoga and dance studios, rehearsal and recording spaces, event halls — any business with hourly rental and booking."
+    }
+  },
+  {
+    "id": "natalia",
+    "title": "Natalia Aesthetics",
+    "category": "shop",
+    "url": "https://cosmetic-ivory.vercel.app/#home",
+    "shots": { "pc": "assets/shots/natalia-pc.webp", "mobile": "assets/shots/natalia-mobile.webp" },
+    "description": {
+      "ru": "Сайт косметолога: услуги с ценами, портфолио-кейсы с фото, блок «обо мне», календарь записи, форма связи, светлая эстетичная вёрстка плюс тёмная тема на выбор.",
+      "uk": "Сайт косметолога: послуги з цінами, портфоліо-кейси з фото, блок «про мене», календар запису, форма зв’язку, світла естетична верстка плюс темна тема на вибір.",
+      "en": "A cosmetologist’s site: services with prices, photo case studies, an about section, booking calendar, contact form, light aesthetic layout plus an optional dark theme."
+    },
+    "fit": {
+      "ru": "Косметологам, мастерам маникюра, бровистам, визажистам, парикмахерам, массажистам, тату-мастерам, салонам красоты.",
+      "uk": "Косметологам, майстрам манікюру, бровістам, візажистам, перукарям, масажистам, тату-майстрам, салонам краси.",
+      "en": "Cosmetologists, nail artists, brow artists, make-up artists, hairdressers, massage therapists, tattoo artists, beauty salons."
+    }
+  },
+  {
+    "id": "luxled",
+    "title": "LUX LED Studio",
+    "category": "landing",
+    "url": "https://www.ledstudio.duckdns.org/",
+    "shots": { "pc": "assets/shots/luxled-pc.webp", "mobile": "assets/shots/luxled-mobile.webp" },
+    "description": {
+      "ru": "Интерактивное веб-приложение — симулятор LED-экрана: бегущая строка, стробоскоп, эквалайзер под музыку с пресетами, аудиоплеер, сохранение видео, три языка. Не шаблонный лендинг, а живой инструмент.",
+      "uk": "Інтерактивний вебзастосунок — симулятор LED-екрана: рухомий рядок, стробоскоп, еквалайзер під музику з пресетами, аудіоплеєр, збереження відео, три мови. Не шаблонний лендинг, а живий інструмент.",
+      "en": "An interactive web app — an LED screen simulator: scrolling ticker, strobe, music equalizer with presets, audio player, video export, three languages. Not a template landing but a working tool."
+    },
+    "fit": {
+      "ru": "Диджеям, стримерам и организаторам вечеринок, владельцам LED-вывесок и бегущих строк; витрина кастомного веб-сервиса под любую задачу.",
+      "uk": "Діджеям, стримерам і організаторам вечірок, власникам LED-вивісок і рухомих рядків; вітрина кастомного вебсервісу під будь-яку задачу.",
+      "en": "DJs, streamers and party organisers, owners of LED signs and tickers; a showcase for custom web services of any kind."
+    }
+  },
+  {
+    "id": "court1",
+    "title": "COURT N°1",
+    "category": "shop",
+    "url": "https://streetwear02.netlify.app/",
+    "shots": { "pc": "assets/shots/court1-pc.webp", "mobile": "assets/shots/court1-mobile.webp" },
+    "description": {
+      "ru": "Магазин уличной одежды в editorial-стилистике: карточки товаров с быстрым просмотром, категории, лукбук, манифест бренда, корзина. Вайб ночного города, баскетбола и аналоговой плёнки.",
+      "uk": "Магазин вуличної одежі в editorial-стилістиці: картки товарів із швидким переглядом, категорії, лукбук, маніфест бренду, кошик. Вайб нічного міста, баскетболу й аналогової плівки.",
+      "en": "A streetwear store in editorial style: product cards with quick view, categories, lookbook, brand manifesto, cart. The vibe of the night city, basketball and analogue film."
+    },
+    "fit": {
+      "ru": "Брендам одежды и аксессуаров, спорттоварам, кроссовкам, джинсовым брендам, мерчу музыкантов и спортивных клубов.",
+      "uk": "Брендам одягу й аксесуарів, спорттоварам, кросівкам, джинсовим брендам, мерчу музикантів і спортивних клубів.",
+      "en": "Clothing and accessory brands, sporting goods, sneakers, denim labels, merch for musicians and sports clubs."
+    }
+  },
+  {
+    "id": "sherlock",
+    "title": "Sherlock Holmes",
+    "category": "blog",
+    "url": "https://scherlock.netlify.app/",
+    "shots": { "pc": "assets/shots/sherlock-pc.webp", "mobile": "assets/shots/sherlock-mobile.webp" },
+    "description": {
+      "ru": "Концепт-сайт «консультирующего детектива» в викторианской стилистике: архив раскрытых дел, метод Холмса, специализация, отзывы клиентов и форма «передать дело». Три языка, узнаваемый юмор.",
+      "uk": "Концепт-сайт «консультуючого детектива» у вікторіанській стилістиці: архів розкритих справ, метод Холмса, спеціалізація, відгуки клієнтів і форма «передати справу». Три мови, упізнаваний гумор.",
+      "en": "A concept site for a consulting detective in Victorian style: archive of solved cases, Holmes’s method, specialisation, client reviews and a hand-over-a-case form. Three languages and recognisable humour."
+    },
+    "fit": {
+      "ru": "Частным детективам и юристам, квест-румам, организаторам квизов и тематических мероприятий — и как образец «персонажного» бренда для любой ниши.",
+      "uk": "Приватним детективам і юристам, квест-румам, організаторам квізів і тематичних подій — і як зразок «персонажного» бренду для будь-якої ніші.",
+      "en": "Private investigators and lawyers, escape rooms, quiz and themed event organisers — and a model of a character-driven brand for any niche."
+    }
+  },
+  {
+    "id": "volkswagen",
+    "title": "Volkswagen",
+    "category": "corporate",
+    "url": "https://alexdiler.vercel.app/",
+    "shots": { "pc": "assets/shots/volkswagen-pc.webp", "mobile": "assets/shots/volkswagen-mobile.webp" },
+    "description": {
+      "ru": "Сайт автодилера: каталог моделей с характеристиками и ценами, фильтры (в наличии / кроссоверы / электро), блок услуг (кредит, trade-in, сервис), цифры доверия, отзывы и онлайн-запись на тест-драйв.",
+      "uk": "Сайт автодилера: каталог моделей з характеристиками й цінами, фільтри (у наявності / кросовери / електро), блок послуг (кредит, trade-in, сервіс), цифри довіри, відгуки та онлайн-запис на тест-драйв.",
+      "en": "A car dealer site: model catalogue with specs and prices, filters (in stock / crossovers / electric), services block (credit, trade-in, service), trust figures, reviews and online test-drive booking."
+    },
+    "fit": {
+      "ru": "Автосалонам и дилерам других марок, автоподбору и выкупу, прокату авто, СТО и детейлингу — автомобильному бизнесу с каталогом и записью.",
+      "uk": "Автосалонам і дилерам інших марок, автопідбору та викупу, прокату авто, СТО й детейлінгу — автомобільному бізнесу з каталогом і записом.",
+      "en": "Car showrooms and dealers of other brands, car sourcing and buyout, rentals, service stations and detailing — automotive businesses with a catalogue and booking."
+    }
+  },
+  {
+    "id": "dmitry",
+    "title": "Дмитрий",
+    "category": "services",
+    "url": "https://supermaster-2.vercel.app/",
+    "shots": { "pc": "assets/shots/dmitry-pc.webp", "mobile": "assets/shots/dmitry-mobile.webp" },
+    "description": {
+      "ru": "Сайт мастера по ремонту и отделке: услуги, цена за час, калькуляторы работ и материалов с отправкой сметы, умный чат-помощник, подсказывающий цены по ключевым словам, кнопка «вызвать мастера».",
+      "uk": "Сайт майстра з ремонту й оздоблення: послуги, ціна за годину, калькулятори робіт і матеріалів з відправленням кошторису, розумний чат-помічник, який підказує ціни за ключовими словами, кнопка «викликати майстра».",
+      "en": "A repairs and finishing master’s site: services, hourly rate, work and material calculators that send an estimate, a smart chat assistant suggesting prices by keywords, and a call-the-master button."
+    },
+    "fit": {
+      "ru": "Мастерам на все руки, сантехникам, электрикам, плиточникам, сборщикам мебели, бригадам отделочников — калькулятор перенастраивается под любые услуги.",
+      "uk": "Майстрам на всі руки, сантехнікам, електрикам, плиточникам, складальникам меблів, бригадам оздоблювачів — калькулятор переналаштовується під будь-які послуги.",
+      "en": "Handymen, plumbers, electricians, tilers, furniture assemblers, finishing crews — the calculator can be retuned for any service."
+    }
+  },
+  {
+    "id": "o3",
+    "title": "O³ STUDIO",
+    "category": "landing",
+    "url": "https://osite-eta.vercel.app/",
+    "shots": { "pc": "assets/shots/o3-pc.webp", "mobile": "assets/shots/o3-mobile.webp" },
+    "description": {
+      "ru": "Портфолио мультидисциплинарного креатора: фотография, видео и веб-разработка. Услуги по трём направлениям, портфолио с фильтрами проектов, контакты с формой, три языка интерфейса. Строгая тёмная сетка.",
+      "uk": "Портфоліо мультидисциплінарного креатора: фотографія, відео та веброзробка. Послуги за трьома напрямами, портфоліо з фільтрами проєктів, контакти з формою, три мови інтерфейсу. Строга темна сітка.",
+      "en": "A multidisciplinary creator’s portfolio: photography, video and web development. Services in three directions, portfolio with project filters, contact form, three UI languages. A strict dark grid."
+    },
+    "fit": {
+      "ru": "Фотографам, видеографам, дизайнерам, разработчикам, маркетологам, креативным студиям и агентствам — всем, кто продаёт работы через портфолио.",
+      "uk": "Фотографам, відеографам, дизайнерам, розробникам, маркетологам, креативним студіям і агенціям — усім, хто продає роботи через портфоліо.",
+      "en": "Photographers, videographers, designers, developers, marketers, creative studios and agencies — anyone selling work through a portfolio."
+    }
+  },
+  {
+    "id": "neuralmind",
+    "title": "NEURALMIND",
+    "category": "services",
+    "url": "https://psyhology-8jft.vercel.app/",
+    "shots": { "pc": "assets/shots/neuralmind-pc.webp", "mobile": "assets/shots/neuralmind-mobile.webp" },
+    "description": {
+      "ru": "Сайт частного психолога в тёмной «нейро»-эстетике: анимированный фон-нейросеть, сильный эмоциональный заголовок, блоки метода и терапии, счётчики статистики, финальная форма записи.",
+      "uk": "Сайт приватного психолога в темній «нейро»-естетиці: анімований фон-нейромережа, сильний емоційний заголовок, блоки методу й терапії, лічильники статистики, фінальна форма запису.",
+      "en": "A private psychologist’s site in a dark neuro aesthetic: animated neural background, a strong emotional headline, method and therapy sections, statistics counters, closing booking form."
+    },
+    "fit": {
+      "ru": "Психологам, психотерапевтам, коучам, гипнологам, репетиторам, юристам частной практики — экспертам, которые продают личные консультации.",
+      "uk": "Психологам, психотерапевтам, коучам, гіпнологам, репетиторам, юристам приватної практики — експертам, які продають особисті консультації.",
+      "en": "Psychologists, psychotherapists, coaches, hypnotherapists, tutors, private-practice lawyers — experts selling one-to-one consultations."
+    }
+  },
+  {
+    "id": "timer303",
+    "title": "303 Screen Break Timer",
+    "category": "landing",
+    "url": "https://303timer.vercel.app/",
+    "embeddable": false,
+    "shots": { "pc": "assets/shots/timer303-pc.webp", "mobile": "assets/shots/timer303-mobile.webp" },
+    "description": {
+      "ru": "Лендинг приложения для Windows: помодоро, короткие перерывы, режимы дыхания, собственные звуки и музыка, статистика и настройка таймеров. Светлая зелёная подача и понятная установка.",
+      "uk": "Лендинг застосунку для Windows: помодоро, короткі перерви, режими дихання, власні звуки й музика, статистика та налаштування таймерів. Світла зелена подача й просте встановлення.",
+      "en": "A landing page for a Windows app: pomodoro, short breaks, breathing modes, custom sounds and music, stats and timer settings. Light green styling and a clear install flow."
+    },
+    "fit": {
+      "ru": "Разработчикам приложений и сервисов, IT-командам, стартапам и всем, кто продаёт софт с сайта.",
+      "uk": "Розробникам застосунків і сервісів, IT-командам, стартапам і всім, хто продає софт із сайту.",
+      "en": "App and service developers, IT teams, startups — anyone selling software from a website."
+    }
+  }
+]
