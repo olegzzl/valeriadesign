@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Готовые сайты">
   <rect width="64" height="64" fill="#bde9e7"/>
-  <path fill="#a82761" d="M25 6h14v19h19v14H39v19H25V39H6V25h19z"/>
+  <g fill="#a82761">
+    <path d="M26.88 6.4h10.24v20.48h20.48v10.24H37.12v20.48H26.88V37.12H6.4V26.88h20.48z"/>
+    <path opacity=".45" d="M16.64 16.64h10.24v10.24H16.64zM37.12 37.12h10.24v10.24H37.12z"/>
+  </g>
 </svg>

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /source/
 Disallow: /*?*
 
-Sitemap: https://valeriadesign.vercel.app/sitemap.xml
+Sitemap: https://www.olegzzl.pp.ua/sitemap.xml
