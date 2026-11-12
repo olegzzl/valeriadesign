@@ -118,6 +118,7 @@ img{display:block;max-width:100%}
 .footer-note{display:block;font-size:12px;line-height:1.4;margin-top:6px}
 .conversion-footer>p{font-size:12px;line-height:1.5;color:var(--muted);margin:0;max-width:360px}
 .footer-copyright{display:block;margin-top:12px;font-family:var(--mono-font);font-size:10px;letter-spacing:.06em;color:var(--muted)}
+.footer-geo{margin:8px 0 0;font-family:var(--mono-font);font-size:10px;line-height:1.6;letter-spacing:.02em;color:var(--muted);max-width:44ch}
 .catalog-footer{display:flex;align-items:center;gap:12px;border-top:1px solid #638c8c;margin-top:24px;padding-top:14px;font-family:var(--mono-font);font-size:10px}
 .catalog-footer svg{color:var(--raspberry);width:19px}
 .catalog-footer button{margin-left:auto;background:transparent;border:1px solid #638c8c;width:44px;min-height:44px;font-size:22px;color:var(--ink)}

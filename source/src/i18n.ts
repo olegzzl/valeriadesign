@@ -99,13 +99,18 @@ export interface UiDict {
   seoIntro: string;
   seoParagraphs: string[];
   seoServices: { name: string; text: string }[];
+  geoKicker: string;
+  geoTitle: string;
+  geoText: string;
+  geoCities: string[];
+  geoFooter: string;
 }
 
 const ru: UiDict = {
   brand: 'ГОТОВЫЕ САЙТЫ',
-  documentTitle: 'Разработка сайтов, лендингов и веб-приложений | Готовые сайты',
+  documentTitle: 'Разработка сайтов по Украине | Готовые сайты',
   documentDescription:
-    'Разработка сайтов, лендингов и веб-приложений: дизайн, вёрстка, настройка домена, форм и SEO. 12 готовых проектов, запуск за несколько дней, от 3 000 грн.',
+    'Разработка сайтов по Украине: Киев, Харьков, Днепр, Одесса, Львов, Черновцы, Чернигов. Дизайн, вёрстка, настройка, запуск. 12 готовых проектов, от 3 000 грн.',
   navCatalog: 'Каталог сайтов',
   navOrder: 'Цены и заказ',
   navInstagram: 'Instagram',
@@ -215,13 +220,19 @@ const ru: UiDict = {
     { name: 'Интернет-магазины', text: 'Каталог с фильтрами, карточками товаров, корзиной и оплатой.' },
     { name: 'Веб-приложения', text: 'Личные кабинеты, калькуляторы, записи и внутренние сервисы.' },
   ],
+  geoKicker: 'ГЕОГРАФИЯ',
+  geoTitle: 'Разработка сайтов по всей Украине',
+  geoText:
+    'Работаем с бизнесом из Киева, Харькова, Днепра, Одессы и Чернигова, а также с клиентами из других городов. Создание сайта идёт удалённо: задачу, макеты и правки согласовываем онлайн, поэтому город не имеет значения. Лендинг, корпоративный сайт или интернет-магазин запускаем под ключ и передаём готовым к работе.',
+  geoCities: ['Киев', 'Харьков', 'Днепр', 'Одесса', 'Львов', 'Черновцы', 'Чернигов', 'Вся Украина'],
+  geoFooter: 'Разработка сайтов: Киев · Харьков · Днепр · Одесса · Львов · Черновцы · Чернигов · вся Украина',
 };
 
 const uk: UiDict = {
   brand: 'ГОТОВІ САЙТИ',
-  documentTitle: 'Розробка сайтів, лендингів і вебзастосунків | Готові сайти',
+  documentTitle: 'Розробка сайтів по Україні | Готові сайти',
   documentDescription:
-    'Розробка сайтів, лендингів і вебзастосунків: дизайн, верстка, налаштування домену, форм і SEO. 12 готових проєктів, запуск за кілька днів, від 3 000 грн.',
+    'Розробка сайтів по Україні: Київ, Харків, Дніпро, Одеса, Львів, Чернівці, Чернігів. Дизайн, верстка, налаштування, запуск. 12 готових проєктів, від 3 000 грн.',
   navCatalog: 'Каталог сайтів',
   navOrder: 'Ціни та замовлення',
   navInstagram: 'Instagram',
@@ -331,13 +342,19 @@ const uk: UiDict = {
     { name: 'Інтернет-магазини', text: 'Каталог з фільтрами, картками товарів, кошиком і оплатою.' },
     { name: 'Вебзастосунки', text: 'Особисті кабінети, калькулятори, записи та внутрішні сервіси.' },
   ],
+  geoKicker: 'ГЕОГРАФІЯ',
+  geoTitle: 'Розробка сайтів по всій Україні',
+  geoText:
+    'Працюємо з бізнесом із Києва, Харкова, Дніпра, Одеси й Чернігова, а також із клієнтами з інших міст. Створення сайту відбувається віддалено: задачу, макети й правки узгоджуємо онлайн, тому місто не має значення. Лендинг, корпоративний сайт або інтернет-магазин запускаємо під ключ і передаємо готовим до роботи.',
+  geoCities: ['Київ', 'Харків', 'Дніпро', 'Одеса', 'Львів', 'Чернівці', 'Чернігів', 'Уся Україна'],
+  geoFooter: 'Розробка сайтів: Київ · Харків · Дніпро · Одеса · Львів · Чернівці · Чернігів · уся Україна',
 };
 
 const en: UiDict = {
   brand: 'READY SITES',
-  documentTitle: 'Website development, landing pages and web apps | Ready sites',
+  documentTitle: 'Website development across Ukraine | Ready sites',
   documentDescription:
-    'Website development, landing pages and web apps: design, markup, domain, forms and SEO setup. 12 ready projects, launch within days, from UAH 3,000.',
+    'Website development across Ukraine: Kyiv, Kharkiv, Dnipro, Odesa, Lviv, Chernivtsi, Chernihiv. Design, markup, setup, launch. 12 ready projects, from UAH 3,000.',
   navCatalog: 'Catalogue',
   navOrder: 'Prices & order',
   navInstagram: 'Instagram',
@@ -442,6 +459,12 @@ const en: UiDict = {
     { name: 'Online stores', text: 'A catalogue with filters, product cards, a cart and payments.' },
     { name: 'Web apps', text: 'Dashboards, calculators, booking tools and internal services.' },
   ],
+  geoKicker: 'COVERAGE',
+  geoTitle: 'Website development across Ukraine',
+  geoText:
+    'We work with businesses from Kyiv, Kharkiv, Dnipro, Odesa and Chernihiv, and with clients from other cities too. The whole process runs remotely: we discuss the task, agree on designs and revisions online, so your city does not matter. A landing page, corporate site or online store is delivered turnkey and ready to use.',
+  geoCities: ['Kyiv', 'Kharkiv', 'Dnipro', 'Odesa', 'Lviv', 'Chernivtsi', 'Chernihiv', 'All Ukraine'],
+  geoFooter: 'Website development: Kyiv · Kharkiv · Dnipro · Odesa · Lviv · Chernivtsi · Chernihiv · all Ukraine',
 };
 
 export const UI: Record<Lang, UiDict> = { ru, uk, en };

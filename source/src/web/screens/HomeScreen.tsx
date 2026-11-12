@@ -288,6 +288,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
               <SocialLinks t={t} align="start" />
               <span className="footer-note">{t.footerNote}</span>
               <span className="footer-copyright">© 2026 {t.brand}</span>
+              <p className="footer-geo">{t.geoFooter}</p>
             </div>
             <p>{t.instagramAria.replace(' — ', ' · ')}</p>
           </footer>
