@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import type { CategoryKey, Lang, Project } from '../../types';
-import { CATEGORY_ORDER, EMAIL_ADDRESS, TELEGRAM_HANDLE, TELEGRAM_URL, UI } from '../../i18n';
+import { CATEGORY_ORDER, UI } from '../../i18n';
 import { Pixel } from '../components/Pixel';
 import { SocialLinks } from '../components/SocialLinks';
 import { LangSwitch } from '../components/LangSwitch';
@@ -41,7 +41,6 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
               <span>{t.brand}</span>
             </div>
             <div className="masthead-right">
-              <SocialLinks t={t} className="masthead-social" />
               <LangSwitch lang={lang} onChange={onLang} ariaLabel={t.langAria} />
               <button
                 className="menu-toggle"
@@ -68,7 +67,6 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
                 {t.ctaEstimate} ↗
               </button>
             </div>
-            <SocialLinks t={t} className="strip-social" />
           </div>
 
           {menu && (
@@ -264,7 +262,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
             </div>
           </section>
 
-          <section className="contact-panel" id="contacts">
+          <section className="contact-panel">
             <div className="contact-panel-top">
               <span className="section-kicker">{t.contactKicker}</span>
               <Pixel />
@@ -290,24 +288,20 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
                 {t.ctaContact}
               </button>
             </div>
-            <p className="contact-direct">
-              <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
-              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-                {TELEGRAM_HANDLE}
-              </a>
-            </p>
             <p className="connection-status">{t.contactStatus}</p>
+          </section>
+
+          <section className="contacts-block" id="contacts" aria-label={t.menuContacts}>
+            <SocialLinks t={t} align="start" className="social-large" />
           </section>
 
           <footer className="conversion-footer">
             <div>
               <span className="footer-brand">{t.brand}</span>
-              <SocialLinks t={t} align="start" />
               <span className="footer-note">{t.footerNote}</span>
               <span className="footer-copyright">© 2026 {t.brand}</span>
               <p className="footer-geo">{t.geoFooter}</p>
             </div>
-            <p>{t.instagramAria.replace(' — ', ' · ')}</p>
           </footer>
 
           <div className="catalog-footer">

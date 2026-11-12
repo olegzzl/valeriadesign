@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import type { Lang, Project } from '../../types';
 import { UI } from '../../i18n';
 import { Pixel } from '../components/Pixel';
-import { SocialLinks } from '../components/SocialLinks';
 
 interface ContactProps {
   lang: Lang;
@@ -163,10 +162,6 @@ export const ContactScreen: React.FC<ContactProps> = ({ lang, projects, initialP
           </section>
         )}
 
-        <div className="request-socials">
-          <SocialLinks t={t} align="start" />
-          <span>{t.requestSocialsNote}</span>
-        </div>
       </div>
     </main>
   );

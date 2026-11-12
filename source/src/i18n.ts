@@ -95,6 +95,8 @@ export interface UiDict {
   telegramAria: string;
   emailAria: string;
   menuContacts: string;
+  contactsKicker: string;
+  contactsTitle: string;
   requestSocialsNote: string;
   orderFromPreview: string;
   seoKicker: string;
@@ -207,6 +209,8 @@ const ru: UiDict = {
   telegramAria: 'Telegram @spokum_chat',
   emailAria: 'Написать на почту olegzzl@zohomail.eu',
   menuContacts: 'Контакты',
+  contactsKicker: 'КОНТАКТЫ',
+  contactsTitle: 'Напишите напрямую',
   requestSocialsNote: 'Соцссылки настраиваются.',
   orderFromPreview: 'Заказать',
   seoKicker: 'ЧТО МЫ ДЕЛАЕМ',
@@ -332,6 +336,8 @@ const uk: UiDict = {
   telegramAria: 'Telegram @spokum_chat',
   emailAria: 'Написати на пошту olegzzl@zohomail.eu',
   menuContacts: 'Контакти',
+  contactsKicker: 'КОНТАКТИ',
+  contactsTitle: 'Напишіть напряму',
   requestSocialsNote: 'Соцпосилання налаштовуються.',
   orderFromPreview: 'Замовити',
   seoKicker: 'ЩО МИ РОБИМО',
@@ -452,6 +458,8 @@ const en: UiDict = {
   telegramAria: 'Telegram @spokum_chat',
   emailAria: 'Email olegzzl@zohomail.eu',
   menuContacts: 'Contacts',
+  contactsKicker: 'CONTACTS',
+  contactsTitle: 'Get in touch directly',
   requestSocialsNote: 'Social links are being set up.',
   orderFromPreview: 'Order',
   seoKicker: 'WHAT WE DO',
