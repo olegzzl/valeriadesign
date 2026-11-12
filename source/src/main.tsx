@@ -53,6 +53,19 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
     document.title = UI[lang].documentTitle;
+    const setMeta = (selector: string, value: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('content', value);
+    };
+    setMeta('meta[name="description"]', UI[lang].documentDescription);
+    setMeta('meta[property="og:title"]', UI[lang].documentTitle);
+    setMeta('meta[property="og:description"]', UI[lang].documentDescription);
+    setMeta('meta[name="twitter:title"]', UI[lang].documentTitle);
+    setMeta('meta[name="twitter:description"]', UI[lang].documentDescription);
+    setMeta(
+      'meta[property="og:locale"]',
+      lang === 'ru' ? 'ru_RU' : lang === 'uk' ? 'uk_UA' : 'en_US'
+    );
     try {
       localStorage.setItem(LANG_KEY, lang);
     } catch {

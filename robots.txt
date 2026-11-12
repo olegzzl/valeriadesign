@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /source/
+Disallow: /*?*
+
+Sitemap: https://valeriadesign.vercel.app/sitemap.xml

@@ -11,6 +11,7 @@ export const CATEGORY_ORDER: CategoryKey[] = ['shop', 'corporate', 'landing', 's
 export interface UiDict {
   brand: string;
   documentTitle: string;
+  documentDescription: string;
   navCatalog: string;
   navOrder: string;
   navInstagram: string;
@@ -93,11 +94,18 @@ export interface UiDict {
   instagramAria: string;
   requestSocialsNote: string;
   orderFromPreview: string;
+  seoKicker: string;
+  seoTitle: string;
+  seoIntro: string;
+  seoParagraphs: string[];
+  seoServices: { name: string; text: string }[];
 }
 
 const ru: UiDict = {
   brand: 'ГОТОВЫЕ САЙТЫ',
-  documentTitle: 'Готовые сайты — каталог',
+  documentTitle: 'Разработка сайтов, лендингов и веб-приложений | Готовые сайты',
+  documentDescription:
+    'Разработка сайтов, лендингов и веб-приложений: дизайн, вёрстка, настройка домена, форм и SEO. 12 готовых проектов, запуск за несколько дней, от 3 000 грн.',
   navCatalog: 'Каталог сайтов',
   navOrder: 'Цены и заказ',
   navInstagram: 'Instagram',
@@ -190,11 +198,30 @@ const ru: UiDict = {
   instagramAria: 'Instagram — @olegwebdesign',
   requestSocialsNote: 'Соцссылки настраиваются.',
   orderFromPreview: 'Заказать',
+  seoKicker: 'ЧТО МЫ ДЕЛАЕМ',
+  seoTitle: 'Разработка сайтов, лендингов и веб-приложений',
+  seoIntro:
+    'Готовый сайт из каталога запускаем за несколько дней. Если нужен индивидуальный проект, собираем сайт с нуля: дизайн, вёрстка, настройка и запуск.',
+  seoParagraphs: [
+    'Мы занимаемся разработкой сайтов для бизнеса: корпоративные сайты, лендинги, интернет-магазины, сайты услуг и блоги. Каждый проект делаем адаптивным, чтобы он нормально открывался на телефоне, планшете и компьютере.',
+    'В работу входит дизайн сайта, вёрстка, настройка домена и почты, подключение форм обратной связи и мессенджеров, базовая SEO-настройка: заголовки, описания, карта сайта и разметка для поисковых систем. Дальше наполняем сайт вашей информацией и фотографиями и проверяем результат на реальных устройствах.',
+    'Отдельное направление это веб-приложения: личные кабинеты, калькуляторы, формы записи, каталоги с фильтрами и оплатой. Если нужен не просто сайт, а рабочая система под ваш процесс, собираем её под задачу.',
+  ],
+  seoServices: [
+    { name: 'Разработка сайтов', text: 'Корпоративные сайты, визитки и многостраничные проекты под ваш бизнес.' },
+    { name: 'Лендинги', text: 'Одностраничники под услугу, запуск продукта или рекламную кампанию.' },
+    { name: 'Дизайн сайтов', text: 'Макет, типографика, сетка и адаптив под телефон и планшет.' },
+    { name: 'Настройка сайтов и SEO', text: 'Домен, почта, формы, аналитика, карта сайта и разметка для поиска.' },
+    { name: 'Интернет-магазины', text: 'Каталог с фильтрами, карточками товаров, корзиной и оплатой.' },
+    { name: 'Веб-приложения', text: 'Личные кабинеты, калькуляторы, записи и внутренние сервисы.' },
+  ],
 };
 
 const uk: UiDict = {
   brand: 'ГОТОВІ САЙТИ',
-  documentTitle: 'Готові сайти — каталог',
+  documentTitle: 'Розробка сайтів, лендингів і вебзастосунків | Готові сайти',
+  documentDescription:
+    'Розробка сайтів, лендингів і вебзастосунків: дизайн, верстка, налаштування домену, форм і SEO. 12 готових проєктів, запуск за кілька днів, від 3 000 грн.',
   navCatalog: 'Каталог сайтів',
   navOrder: 'Ціни та замовлення',
   navInstagram: 'Instagram',
@@ -287,11 +314,30 @@ const uk: UiDict = {
   instagramAria: 'Instagram — @olegwebdesign',
   requestSocialsNote: 'Соцпосилання налаштовуються.',
   orderFromPreview: 'Замовити',
+  seoKicker: 'ЩО МИ РОБИМО',
+  seoTitle: 'Розробка сайтів, лендингів і вебзастосунків',
+  seoIntro:
+    'Готовий сайт з каталогу запускаємо за кілька днів. Якщо потрібен індивідуальний проєкт, збираємо сайт з нуля: дизайн, верстка, налаштування та запуск.',
+  seoParagraphs: [
+    'Ми займаємося розробкою сайтів для бізнесу: корпоративні сайти, лендинги, інтернет-магазини, сайти послуг і блоги. Кожен проєкт робимо адаптивним, щоб він нормально відкривався на телефоні, планшеті й комп’ютері.',
+    'У роботу входить дизайн сайту, верстка, налаштування домену та пошти, підключення форм зворотного зв’язку й месенджерів, базова SEO-настройка: заголовки, описи, карта сайту та розмітка для пошукових систем. Далі наповнюємо сайт вашою інформацією та фотографіями і перевіряємо результат на реальних пристроях.',
+    'Окремий напрям це вебзастосунки: особисті кабінети, калькулятори, форми запису, каталоги з фільтрами й оплатою. Якщо потрібен не просто сайт, а робоча система під ваш процес, збираємо її під задачу.',
+  ],
+  seoServices: [
+    { name: 'Розробка сайтів', text: 'Корпоративні сайти, візитки й багатосторінкові проєкти під ваш бізнес.' },
+    { name: 'Лендинги', text: 'Односторінкові сайти під послугу, запуск продукту або рекламну кампанію.' },
+    { name: 'Дизайн сайтів', text: 'Макет, типографіка, сітка й адаптив під телефон і планшет.' },
+    { name: 'Налаштування сайтів і SEO', text: 'Домен, пошта, форми, аналітика, карта сайту й розмітка для пошуку.' },
+    { name: 'Інтернет-магазини', text: 'Каталог з фільтрами, картками товарів, кошиком і оплатою.' },
+    { name: 'Вебзастосунки', text: 'Особисті кабінети, калькулятори, записи та внутрішні сервіси.' },
+  ],
 };
 
 const en: UiDict = {
   brand: 'READY SITES',
-  documentTitle: 'Ready sites — catalogue',
+  documentTitle: 'Website development, landing pages and web apps | Ready sites',
+  documentDescription:
+    'Website development, landing pages and web apps: design, markup, domain, forms and SEO setup. 12 ready projects, launch within days, from UAH 3,000.',
   navCatalog: 'Catalogue',
   navOrder: 'Prices & order',
   navInstagram: 'Instagram',
@@ -379,6 +425,23 @@ const en: UiDict = {
   instagramAria: 'Instagram — @olegwebdesign',
   requestSocialsNote: 'Social links are being set up.',
   orderFromPreview: 'Order',
+  seoKicker: 'WHAT WE DO',
+  seoTitle: 'Website development, landing pages and web apps',
+  seoIntro:
+    'A ready site from the catalogue launches within days. If you need a custom project, we build the website from scratch: design, markup, setup and launch.',
+  seoParagraphs: [
+    'We develop websites for business: corporate sites, landing pages, online stores, service sites and blogs. Every project is responsive, so it opens properly on phones, tablets and desktops.',
+    'The work includes website design, front-end markup, domain and email setup, contact forms and messengers, plus basic SEO setup: titles, descriptions, a sitemap and structured data for search engines. Then we fill the site with your information and photos and check the result on real devices.',
+    'Web apps are a separate direction: dashboards, calculators, booking forms, catalogues with filters and payments. If you need a working system rather than just a website, we build it around your process.',
+  ],
+  seoServices: [
+    { name: 'Website development', text: 'Corporate sites, one-pagers and multi-page projects for your business.' },
+    { name: 'Landing pages', text: 'Single-page sites for a service, a product launch or an ad campaign.' },
+    { name: 'Website design', text: 'Layout, typography, grid and responsive behaviour for phones and tablets.' },
+    { name: 'Website setup and SEO', text: 'Domain, email, forms, analytics, sitemap and structured data for search.' },
+    { name: 'Online stores', text: 'A catalogue with filters, product cards, a cart and payments.' },
+    { name: 'Web apps', text: 'Dashboards, calculators, booking tools and internal services.' },
+  ],
 };
 
 export const UI: Record<Lang, UiDict> = { ru, uk, en };

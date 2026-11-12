@@ -232,6 +232,27 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
 
           {visible.length === 0 && <p className="empty-state">—</p>}
 
+          <section className="services" id="services" aria-labelledby="services-title">
+            <div className="services-head">
+              <span className="section-kicker">{t.seoKicker}</span>
+              <h2 id="services-title">{t.seoTitle}</h2>
+              <p className="services-intro">{t.seoIntro}</p>
+            </div>
+            <div className="services-grid">
+              {t.seoServices.map((service) => (
+                <article className="service-card" key={service.name}>
+                  <h3>{service.name}</h3>
+                  <p>{service.text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="services-text">
+              {t.seoParagraphs.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+
           <section className="contact-panel">
             <div className="contact-panel-top">
               <span className="section-kicker">{t.contactKicker}</span>
