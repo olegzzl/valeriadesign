@@ -255,3 +255,15 @@ img{display:block;max-width:100%}
   .social-links.social-large .social-icons svg{width:34px;height:34px}
   .contacts-block{margin-top:44px}
 }
+
+.social-links.masthead-social{display:none;margin-right:4px}
+.social-links.masthead-social .social-icons button,.social-links.masthead-social .social-icons a{width:36px;min-height:36px;padding:6px}
+@media(min-width:650px){
+  .social-links.masthead-social{display:flex}
+  .strip-social{display:none}
+}
+@media(max-width:649px){
+  .header-contacts{flex-wrap:wrap}
+  .strip-social .social-icons .social-mail{display:none}
+  .strip-social .social-icons button,.strip-social .social-icons a{width:40px;min-height:40px;padding:7px}
+}

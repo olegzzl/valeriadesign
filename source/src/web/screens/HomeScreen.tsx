@@ -41,6 +41,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
               <span>{t.brand}</span>
             </div>
             <div className="masthead-right">
+              <SocialLinks t={t} className="masthead-social" />
               <LangSwitch lang={lang} onChange={onLang} ariaLabel={t.langAria} />
               <button
                 className="menu-toggle"
@@ -67,6 +68,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ lang, projects, filter, setFil
                 {t.ctaEstimate} ↗
               </button>
             </div>
+            <SocialLinks t={t} className="strip-social" />
           </div>
 
           {menu && (
