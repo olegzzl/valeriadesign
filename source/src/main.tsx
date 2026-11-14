@@ -18,9 +18,8 @@ function detectLang(): Lang {
   } catch {
     /* localStorage может быть недоступен */
   }
-  const nav = (navigator.language || '').toLowerCase();
-  if (nav.startsWith('uk')) return 'uk';
-  if (nav.startsWith('en')) return 'en';
+  // Язык браузера намеренно не используется: роботы поисковых систем заходят
+  // с локалью en-US и получали английскую версию в индекс.
   return 'ru';
 }
 
